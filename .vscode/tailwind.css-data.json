@@ -1,0 +1,70 @@
+{
+  "version": 1.1,
+  "properties": [],
+  "atDirectives": [
+    {
+      "name": "@tailwind",
+      "description": "Use the @tailwind directive to insert Tailwind’s `base`, `components`, `utilities`, and `screens` styles into your CSS.",
+      "references": [
+        {
+          "name": "Tailwind’s “Functions & Directives” documentation",
+          "url": "https://tailwindcss.com/docs/functions-and-directives/#tailwind"
+        }
+      ]
+    },
+    {
+      "name": "@theme",
+      "description": "Use the `@theme` directive to define your project's custom design tokens, like fonts, colors, and breakpoints:",
+      "references": [
+        {
+          "name": "Tailwind’s “Functions & Directives” documentation",
+          "url": "https://tailwindcss.com/docs/functions-and-directives/#theme"
+        }
+      ]
+    },
+    {
+      "name": "@plugin",
+      "description": "Use the `@plugin` directive directive to load a legacy JavaScript-based plugin:\nThe @plugin directive accepts either a package name or a local path.",
+      "references": [
+        {
+          "name": "Tailwind’s “Functions & Directives” documentation",
+          "url": "https://tailwindcss.com/docs/functions-and-directives/#theme"
+        }
+      ]
+    },
+    {
+      "name": "@apply",
+      "description": "@apply은 Tailwind CSS v4에서 유틸리티 클래스를 CSS 규칙에 직접 적용할 수 있게 해주는 Tailwind 전용 디렉티브입니다. 빌드 시 해당 유틸리티 클래스들이 실제 CSS 속성으로 변환됩니다.",
+      "references": [
+        {
+          "name": "Tailwind CSS v4 Official Blog",
+          "url": "https://tailwindcss.com/blog/tailwindcss-v4"
+        },
+        {
+          "name": "GitHub Issue on @apply in Tailwind CSS v4",
+          "url": "https://github.com/tailwindlabs/tailwindcss/issues/16346"
+        },
+        {
+          "name": "GitHub Discussion on @apply issues",
+          "url": "https://github.com/tailwindlabs/tailwindcss/discussions/16429"
+        }
+      ]
+    },
+    {
+      "name": "@utility",
+      "description": "@utility은 Tailwind CSS v4에서 새로운 유틸리티 클래스를 정의할 수 있게 해주는 Tailwind 전용 디렉티브입니다. 이 디렉티브는 `@apply`와 유사하지만, 새로운 유틸리티 클래스를 생성하는 데 사용됩니다.",
+      "references": [
+        {
+          "name": "Tailwind CSS v4 - Functions and directives",
+          "url": "https://tailwindcss.com/docs/functions-and-directives"
+        },
+        {
+          "name": "Tailwind CSS v4 Official Blog",
+          "url": "https://tailwindcss.com/blog/tailwindcss-v4"
+        }
+      ]
+    }
+  ],
+  "pseudoClasses": [],
+  "pseudoElements": []
+}

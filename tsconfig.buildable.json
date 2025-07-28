@@ -1,0 +1,19 @@
+/*
+ * 이 파일은 빌드 가능한(참조 가능한) 프로젝트들이 공통으로 사용할 설정을 정의합니다. base 설정을 상속받고, composite 관련 옵션들을 추가합니다.
+ */
+ {
+  // 기본 공통 설정을 가져옵니다.
+  "extends": "./tsconfig.base.json",
+  // 빌드 가능한(composite) 프로젝트를 위한 공통 옵션
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "noEmit": false,
+    "allowImportingTsExtensions": false,
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "types": ["@testing-library/jest-dom/vitest"]
+  },
+  "include": ["src", "docs", "tests"],
+  "exclude": ["node_modules", "dist"]
+}

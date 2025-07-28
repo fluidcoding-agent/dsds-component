@@ -1,0 +1,39 @@
+import { Unstyled, Canvas, Meta } from '@storybook/addon-docs/blocks';
+
+import * as Stories from './VBtn.stories';
+
+<Meta title="Demo" of={Stories} />
+
+# Usage
+
+<div className="flex gap-4 w-full flex-wrap">
+  <div className="flex flex-col flex-1">
+    <h2>Primary</h2>
+    <Canvas of={Stories.Primary}/>
+  </div>
+  <div className="flex flex-col flex-1">
+    <h2>Warning</h2>
+    <Canvas of={Stories.Warning}/>
+  </div>
+  <div className="flex flex-col flex-1">
+    <h2>Danger</h2>
+    <Canvas of={Stories.Danger}/>
+  </div>
+  <div className="d-flex flex-column flex-1">
+    <h2>Secondary</h2>
+    <Canvas of={Stories.Secondary}/>
+  </div>
+  <div className="d-flex flex-column flex-1">
+    <h2>Ghost</h2>
+    <Canvas of={Stories.Ghost}/>
+  </div>
+  <div className="d-flex flex-column flex-1">
+    <h2>GhostLink</h2>
+    <Canvas of={Stories.GhostLink}/>
+  </div>
+</div>
+
+# Demo
+
+<Unstyled>
+</Unstyled>

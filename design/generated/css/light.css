@@ -1,0 +1,135 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --spacing-textbox-py-small: 2px;
+  --spacing-textbox-py-medium: 4px;
+  --spacing-textbox-py-large: 6px;
+  --spacing-button-px-small: 6px;
+  --spacing-button-px-medium: 8px;
+  --spacing-button-px-medium-icon-text: 6px;
+  --spacing-button-px-large: 8px;
+  --spacing-button-pr-small-icon-after-text: 5px;
+  --spacing-button-py-small: 0px;
+  --spacing-button-py-medium: 2px;
+  --spacing-button-py-large: 4px;
+  --spacing-button-gap-default: 4px;
+  --spacing-button-min-w-small: 36px;
+  --spacing-button-min-w-medium: 44px;
+  --spacing-button-min-w-large: 48px;
+  --spacing-button-p-icon-small: 2px;
+  --spacing-button-p-icon-medium: 4px;
+  --spacing-button-p-icon-large: 6px;
+  --spacing-basicbox-opt-message-min-h: 12px;
+  --spacing-basicbox-gap: 4px;
+  --radious-radious-2xsmall: 2px;
+  --radious-radious-medium: 8px;
+  --radious-radious-large: 12px;
+  --radious-radious-2xlarge: 20px;
+  --radious-radious-3xlarge: 40px;
+  --radious-radious-xlarge: 16px;
+  --radious-radious-xsmall: 4px;
+  --radious-radious-none: 0px;
+  --radious-radious-small: 6px;
+  --color-bg-surface-primary: #ffffff;
+  --color-bg-on-button-brand-default: #3392d3;
+  --color-bg-on-button-danger-default: #ff695f;
+  --color-bg-on-button-brand-hover: #0077c8;
+  --color-bg-on-button-danger-hover: #ff4337;
+  --color-bg-on-button-warning-default: #ffc46b;
+  --color-bg-on-button-warning-hover: #ffb546;
+  --color-bg-on-button-danger-disabled: #ff8e87;
+  --color-bg-on-button-warning-disabled: #ffc46b;
+  --color-bg-on-button-brand-disabled: #99c9e9;
+  --color-bg-on-button-secondary-default: #ffffff;
+  --color-bg-on-button-secondary-disabled: #e4e9ed;
+  --color-bg-on-button-secondary-selected: #e6f1fa;
+  --color-bg-on-button-on-icon-dummy-default: #ffd9d7;
+  --color-bg-surface-secondary: #fafbfc;
+  --color-bg-surface-tertiary: #f3f6f8;
+  --color-bg-on-frame: #edf2f4;
+  --color-bg-on-ghost-button-ghostbtn-default: rgba(0, 0, 0, 0);
+  --color-bg-on-ghost-button-ghostbtn-hover: #edf2f4;
+  --color-bg-on-ghost-button-ghostbtn-activated: #e4e9ed;
+  --color-bg-on-ghost-button-ghostbtn-selected: #e6f1fa;
+  --color-bg-scrollbar: rgba(44, 48, 54, 0.32);
+  --color-bg-on-box-box-default: #ffffff;
+  --color-bg-on-box-box-disabled: #e4e9ed;
+  --color-bg-on-ghost-box-ghost-box-default: #edf2f4;
+  --color-bg-on-ghost-box-ghost-box-disabled: #e4e9ed;
+  --color-bg-on-ghost-box-ghost-box-hover: #e4e9ed;
+  --color-bg-on-ghost-box-ghost-box-populated: #f2f4fc;
+  --color-bg-on-ghost-box-ghost-box-activated-inputfield: #ffffff;
+  --color-bg-on-ghost-box-ghost-box-populated-hover: #e6e9f8;
+  --color-bg-on-ghost-box-ghost-box-on-colorbg: rgba(40, 48, 55, 0.32);
+  --color-bg-on-item-list-datatable-hover: #edf2f4;
+  --color-bg-on-item-list-datatable-selected: #e4e9ed;
+  --color-bg-on-shape-brand: #3392d3;
+  --color-text-text-neutral-2nd: #565e66;
+  --color-text-danger: #ff4337;
+  --color-text-text-neutral-emphasize: #283037;
+  --color-text-text-neutral-3rd: #767d84;
+  --color-text-text-neutral-1st: #384047;
+  --color-text-brand: #3392d3;
+  --color-text-on-button-on-brand: #ffffff;
+  --color-text-on-button-on-brand-selected: #0077c8;
+  --color-text-on-button-on-brand-disabled: #cce4f4;
+  --color-text-on-button-on-warning-disabled: #fff0da;
+  --color-text-on-button-on-warning: #ffffff;
+  --color-text-on-button-on-danger: #ffffff;
+  --color-text-on-button-on-danger-disabled: #ffd9d7;
+  --color-text-on-button-on-2ndary: #384047;
+  --color-text-on-button-on-2ndary-disabled: #b2b6bb;
+  --color-text-on-button-on-2ndary-activated-activated-hover: #0077c8;
+  --color-text-text-disabled-optional: #b2b6bb;
+  --color-text-on-btn-ghost-on-ghost-default: #565e66;
+  --color-text-on-btn-ghost-on-ghost-disabled: #b2b6bb;
+  --color-text-on-btn-ghost-on-ghost-default-on-darkbg: #f3f6f8;
+  --color-text-linked: #515e94;
+  --color-text-warning: #d59638;
+  --color-text-on-box-on-box-selected: #384047;
+  --color-text-on-box-on-box-default: #384047;
+  --color-text-on-box-on-box-hint: #90969d;
+  --color-text-on-box-on-box-disabled: #b2b6bb;
+  --color-text-on-ghost-box-on-box-default: #565e66;
+  --color-text-on-ghost-box-on-box-hint: #90969d;
+  --color-text-on-ghost-box-on-box-selected: #384047;
+  --color-text-on-ghost-box-on-box-default-on-darkbg: #f3f6f8;
+  --color-text-on-btn-ghost-link-on-ghost-link-disabled: #b2b6bb;
+  --color-text-on-btn-ghost-link-on-ghost-link-default: #6978b8;
+  --color-icon-default-1st: #565e66;
+  --color-icon-selected: #0077c8;
+  --color-icon-disabled: #b2b6bb;
+  --color-icon-onbrand: #ffffff;
+  --color-icon-default-2nd: #767d84;
+  --color-icon-default-1st-on-darkbg: #f3f6f8;
+  --color-border-border-2-outer: #dadfe4;
+  --color-border-border-3-inner: #e4e9ed;
+  --color-border-border-4-thinner: #edf2f4;
+  --color-border-border-focused-activated-hover: #0077c8;
+  --color-border-btn-2ndary-border-default: #dadfe4;
+  --color-border-btn-2ndary-border-hover: #b2b6bb;
+  --color-border-border-activated-brand: #3392d3;
+  --color-border-selected-populated: #ccd1d6;
+  --color-border-select-selected-hover-populated-hover: #dadfe4;
+  --color-border-on-box-enabled-disabled-selected: #ccd1d6;
+  --color-border-on-box-hover-selected-hover: #b2b6bb;
+  --color-border-on-box-select-activated: #3392d3;
+  --color-border-on-ghost-box-disabled: #dadfe4;
+  --color-border-on-ghost-box-populated: #e6e9f8;
+  --color-border-on-item-list-datatable-hover: #e4e9ed;
+  --color-border-on-item-list-datatable-selected: #dadfe4;
+  --color-border-border-1-emphasize: #ccd1d6;
+  --color-border-border-5-air: #eff4f6;
+  --color-border-on-button-on-icon-dummy-default: #ccf3ef;
+  --style-guide-section: rgba(244, 69, 255, 0.9);
+  --typo-textbox-medium: 400 14px/20px SamsungOneKoreanNoF; /** Form Title */
+  --typo-textbox-small: 400 12px/20px SamsungOneKoreanNoF; /** btn */
+  --typo-button-label-medium: 700 14px/20px SamsungOneKoreanNoF; /** Form Title */
+  --typo-button-label-small: 700 12px/20px SamsungOneKoreanNoF; /** btn */
+  --typo-button-label-medium-light: 400 14px/20px SamsungOneKoreanNoF;
+  --typo-button-label-small-light: 400 12px/14px SamsungOneKoreanNoF; /** Utility, Datatable 1st Title, Breadcrumb */
+  --typo-basicbox-opt-message-default: 400 11px/12px SamsungOneKoreanNoF; /** Legend, Datatable 2nd Title, Datatable Item */
+  --typo-basicbox-label-default: 400 12px/14px SamsungOneKoreanNoF;
+}

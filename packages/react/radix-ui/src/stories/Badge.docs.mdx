@@ -1,0 +1,23 @@
+import { Unstyled, Canvas, Meta } from '@storybook/addon-docs/blocks';
+
+import * as Stories from "./Badge.stories"
+
+<Meta title="Badge Auto Docs" of={Stories} />
+
+# Usage
+
+<div className="flex gap-4 w-full flex-wrap">
+  <div className="flex flex-col flex-1">
+    <h2>Primary</h2>
+    <Canvas of={Stories.BadgeNotificationNew}/>
+  </div>
+  <div className="flex flex-col flex-1">
+    <h2>Warning</h2>
+    <Canvas of={Stories.BadgeNotificationCount}/>
+  </div>
+  <div className="flex flex-col flex-1">
+    <h2>Danger</h2>
+    <Canvas of={Stories.BadgeText}/>
+  </div>
+</div>
+

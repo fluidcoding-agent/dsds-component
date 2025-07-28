@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@import "./styles/variables";
+@import "./styles/icons.css";
+@import "./styles/button.css";
+@import "./styles/boxes.css";
+@import "./styles/lnb.css";
+@import "./styles/dropdown.css";
+@import "./styles/tabs.css";
+@import "./styles/toggle.css";
+@import "./styles/demo.css";
+@import "./styles/tooltip.css";
+@import "./styles/popover.css";
+@import "./styles/header.css";
+@import "./styles/toast.css";
+
+@theme inline {
+}

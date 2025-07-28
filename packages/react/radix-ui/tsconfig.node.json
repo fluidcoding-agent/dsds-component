@@ -1,0 +1,4 @@
+{
+  "extends": "../../../tsconfig.buildable.json", // 1. 루트의 기본 설정 상속
+  "include": ["vite.config.ts", "vitest.config.ts"]
+}

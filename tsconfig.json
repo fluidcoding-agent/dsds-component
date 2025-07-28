@@ -1,0 +1,9 @@
+{
+  "files": [], // 개별 파일은 포함하지 않음
+  "references": [
+    // 이 모노레포에 포함된 모든 TypeScript 프로젝트의 경로를 나열합니다.
+    { "path": "./apps/portal-app" },
+    { "path": "./packages/react/radix-ui" },
+    { "path": "./packages/vue/vuetify" }
+  ]
+}

@@ -1,0 +1,58 @@
+name: Build and Publish Storybook / tokens
+
+on:
+  push:
+    paths: ["docs/*/**.mdx", "docs/helpers/*", "packages/tokens/src/**", "packages/tokens/.storybook/**"]
+    branches: ["main"]
+  pull_request:
+    paths: ["docs/*/**.mdx", "docs/helpers/*", "packages/tokens/src/**", "packages/tokens/.storybook/**"]
+    branches: ["dev"]
+    types:
+      - closed
+
+jobs:
+  build-publish:
+    name: Build and Publish Storybook
+    runs-on: [self-hosted]
+    environment: Build
+    if: |
+      github.event_name == 'push' ||
+      (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
+    steps:
+      # step 0. 체크아웃
+      - uses: actions/checkout@v4
+      # step 1. 종속성 모듈 설치
+      - name: Install Dependencies
+        working-directory: ./packages/tokens
+        run: |
+          pnpm i
+      # step 2. 빌드
+      - name: Build & Publish Storybook
+        working-directory: ./packages/tokens
+        run: |
+          ./scripts/deploy.sh
+      # step 3. 커밋 메시지 저장
+      - name: Save Commit Message
+        working-directory: ./packages/tokens
+        run: |
+          echo "COMMIT_MESSAGE<<EOF" >> $GITHUB_ENV
+          echo "${{ github.event.head_commit.message }}" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+      # step 4. mattermost 메시지 전송
+      - name: Send notification
+        run: |
+          export MATTERMOST_URL="${{ vars.MATTERMOST_URL }}"
+          export MATTERMOST_CHANNEL_ID="${{ vars.MATTERMOST_CHANNEL_ID }}"
+          export MATTERMOST_ACCESS_TOKEN="${{ secrets.MATTERMOST_ACCESS_TOKEN }}"
+          export DISCORD_WEBHOOK_URL="${{ secrets.DISCORD_WEBHOOK_URL}}"
+
+          BASE_URL="${{ vars.BASE_URL }}"
+          NOTI_TARGET="${{ vars.NOTI_TARGET }}"
+          STORYBOOK_URL="$BASE_URL/storybooks/tokens"
+          QUERY_STRING=$(echo "$COMMIT_MESSAGE" | grep -oP '\?path=[^\s]+' || true)
+          if [ -n "$QUERY_STRING" ]; then
+            STORYBOOK_URL+=$QUERY_STRING
+          fi
+          ESCAPED_COMMIT_MESSAGE=$(echo "$COMMIT_MESSAGE" | sed 's/`/\\`/g')
+          MESSAGE=$(echo -e "컴포넌트 소스 변경이 빌드되어 [Storybook]($STORYBOOK_URL) 에 반영되었습니다.\n\n- **커밋 메세지**:\n\`\`\`\n$ESCAPED_COMMIT_MESSAGE\n\`\`\`")
+          pnpm node ./scripts/noti_message.js -t $NOTI_TARGET -m "$MESSAGE" -u "$STORYBOOK_URL"

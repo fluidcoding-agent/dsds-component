@@ -1,0 +1,39 @@
+{
+  "name": "@dsds/mcp-server",
+  "version": "1.0.0",
+  "description": "MCP Server for DSDS React Radix UI Components",
+  "type": "module",
+  "main": "dist/server.js",
+  "bin": {
+    "dsds-mcp-server": "dist/server.js"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "tsx src/server.ts",
+    "inspector": "DANGEROUSLY_OMIT_AUTH=true MCP_AUTO_OPEN_ENABLED=false pnpm dlx @modelcontextprotocol/inspector --config .mcp-inspector.json --server dsds-ui",
+    "test": "echo \"No tests yet\" && exit 0",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.10.2",
+    "chokidar": "^4.0.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "fast-glob": "^3.3.2",
+    "fs-extra": "^11.2.0",
+    "ts-morph": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.0",
+    "vite": "^6.0.0"
+  },
+  "peerDependencies": {
+    "@dsds/react-radix-ui": "workspace:*"
+  }
+}

@@ -1,0 +1,19 @@
+import { Meta, Markdown } from '@storybook/addon-docs/blocks'
+
+<Meta title="기여하기/개발 가이드/테스트 개발" />
+
+# Playwright 테스트 셋업
+
+<Callout kind="warning">
+  2025년 7월 1일 현재 Playwright 1.54.0 버전에서 사내 Proxy 정보를 제대로 인식 못하는 문제 때문에
+  `pnpm exec playwright install` 명령이 실패 해서 버전을  `1.53.2` 로 고정해둔 상태입니다.
+  `1.54` 버전으로 업그레이드 전에 반드시 테스트를 해주세요.
+</Callout>
+
+
+VSCode 에서 Playwright 테스트 실행할때 아래 명령어를 먼저 실행해야 합니다.
+(VSCode 에서 직접 설치 팝업으로 설치할 경우는 오류로 실패함.)
+
+```bash
+pnpm exec playwright install --only-shell chromium
+```

@@ -1,0 +1,34 @@
+:root {
+  --toast-transition-duration: 200ms;
+}
+
+[data-sonner-toast] {
+  transition:
+    transform var(--toast-transition-duration),
+    opacity var(--toast-transition-duration),
+    height var(--toast-transition-duration),
+    box-shadow var(--toast-transition-duration) !important;
+}
+
+/* 맨 앞의 토스트가 삭제될 때 */
+[data-sonner-toast][data-removed="true"][data-front="true"][data-swipe-out="false"] {
+  /*--y: translateY(calc(var(--lift) * -100%)); */
+  --y: translateY(0) !important;
+  opacity: 0;
+}
+
+/* 확장된 상태에서 뒤쪽 토스트가 삭제될 때 */
+[data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="true"] {
+  /* 기존: --y: translateY(calc(var(--lift) * var(--offset) + var(--lift) * -100%)); */
+  --y: translateY(calc(var(--lift) * var(--offset))) !important;
+  opacity: 0;
+}
+
+/* 스택 상태에서 뒤쪽 토스트가 삭제될 때 */
+[data-sonner-toast][data-removed="true"][data-front="false"][data-swipe-out="false"][data-expanded="false"] {
+  --y: translateY(0) !important;
+  opacity: 0;
+  transition:
+    transform var(--toast-transition-duration),
+    opacity var(--toast-transition-duration);
+}

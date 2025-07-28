@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="fonts.css" />
+<link rel="preload" href="/fonts/SamsungSharpSans-Bold.woff" as="font" type="font/woff" crossorigin="anonymous" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<style>
+
+  :root {
+    --font-sans: "Malgun Gothic", "SamsungOneKoreanNoF", ui-sans-serif, system-ui, sans-serif;
+    --font-heading: "Samsung Sharp Sans", "Malgun Gothic", "Pretendard", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: D2Coding, Consolas, "Courier New", ui-monospace, monospace;
+    --default-font-family: "Malgun Gothic", var(--font-sans);
+  }
+
+  .sidebar-header {
+    /* 원하는 패딩, 폰트, 배경 등 지정 */
+    padding-left: 5px !important;
+    min-height: 40px;
+
+    background-repeat: no-repeat;
+    background-position: 0px center;
+    background-size: 36px;
+    background-image: url("%STORYBOOK_BASE_URL%/images/dsds-logo.png");
+
+    & > div > a {
+      font-family: var(--font-heading);
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 18px;
+      margin-bottom: -4px;
+    }
+  }
+
+  .sidebar-header > div {
+    padding-left: 40px; /* 로고 공간 확보 */
+    margin-right: 0px !important;
+  }
+
+  .sidebar-header > div:last-child {
+    padding-left: 0px;
+  }
+
+  pre {
+    font-family: var(--font-mono) !important;
+    * {
+      font-family: var(--font-mono) !important;
+    }
+  }
+
+  #panel-tab-content > div > div {
+    scrollbar-width: thin !important;
+  }
+</style>

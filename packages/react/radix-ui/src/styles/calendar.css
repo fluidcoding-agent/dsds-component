@@ -1,0 +1,44 @@
+.date-range-picker {
+  td[role="gridcell"] {
+    &:hover:not(.rdp-range_start):not(.rdp-range_end) {
+      button {
+        background-color: var(--color-blue-100);
+        /*
+        border-radius: var(--radius-xs);
+        */
+      }
+    }
+
+    &:hover.rdp-range_start,
+    .rdp-range_end {
+      button {
+        background-color: var(--color-blue-600);
+        /*
+        border-radius: var(--radius-xs);
+        */
+      }
+    }
+  }
+
+  td.rdp-range_start {
+    background-color: var(--rdp-range_middle-background-color);
+    border-top-left-radius: 9999px;
+    border-bottom-left-radius: 9999px;
+    button {
+      border-width: 0px !important;
+    }
+  }
+
+  td.rdp-range-middle {
+    background-color: var(--color-blue-100);
+  }
+
+  td.rdp-range_end {
+    background-color: var(--rdp-range_middle-background-color);
+    border-top-right-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+    button {
+      border-width: 0px !important;
+    }
+  }
+}

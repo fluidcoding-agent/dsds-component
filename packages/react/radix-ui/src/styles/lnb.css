@@ -1,0 +1,6 @@
+@import './variables';
+
+@theme inline {
+    --color-text-lnb-disabled: var(--color-border-on-box-enabled-disabled-selected);
+  }
+  

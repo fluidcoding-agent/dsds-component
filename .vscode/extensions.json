@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "gruntfuggly.todo-tree",
+    "smitpatelsp.reactjs-snippets-sp",
+    "dbaeumer.vscode-eslint",
+    "kamikillerto.vscode-colorize",
+    "unifiedjs.vscode-mdx",
+    "ms-playwright.playwright",
+    "bradlc.vscode-tailwindcss",
+    "vitest.explorer",
+    "vue.volar"
+  ]
+}

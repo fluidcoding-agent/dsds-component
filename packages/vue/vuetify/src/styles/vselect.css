@@ -1,0 +1,60 @@
+@import "./dropdown.css";
+
+/* Reset Vuetify select defaults and apply DSDS tokens */
+.v-select {
+  /* Reset default styles */
+  font-family: var(--font-sans);
+
+  /* Default minimum width - matching React TextboxWrapper */
+  min-width: 120px;
+  width: 120px;
+
+  /* Base select styling - matching React TextboxWrapper trigger */
+  .v-field {
+    @apply !bg-dropdown-trigger-bg !text-dropdown-trigger-text;
+    @apply !border-dropdown-trigger-border !rounded-xs;
+    @apply !transition-all !duration-200 !ease-in-out;
+    @apply !typo-medium;
+
+    /* Set exact height and padding to match React TextboxWrapper medium */
+    min-height: 28px !important;
+    height: 28px !important;
+    padding: 0 !important;
+  }
+
+  /* Input field styling */
+  .v-field__input {
+    min-height: auto !important;
+    padding: 4px 6px 4px 8px !important; /* py-[4px] pl-[8px] pr-[6px] */
+    line-height: 1.25 !important;
+
+    /* &::placeholder styles will be added later if needed */
+
+    input {
+      height: 20px !important; /* 28px - 8px padding */
+      @apply !text-dropdown-trigger-text !typo-medium placeholder:!text-dropdown-trigger-text;
+    }
+
+    &:disabled {
+      @apply !text-dropdown-trigger-text-disabled;
+    }
+  }
+
+  /* Selection styling */
+  .v-select__selection {
+    @apply !text-dropdown-trigger-text !typo-medium;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Remove default outline */
+  .v-field__outline {
+    display: none !important;
+  }
+
+  /* Hide default Vuetify select icon */
+  .v-field__append-inner .v-select__menu-icon {
+    display: none !important;
+  }
+}

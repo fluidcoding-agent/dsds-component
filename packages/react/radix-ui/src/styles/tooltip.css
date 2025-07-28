@@ -1,0 +1,4 @@
+@theme inline {
+  --color-tooltip-bg: var(--colors-neutral-neutral-17);
+  --color-tooltip-text: var(--colors-neutral-neutral-02);
+}

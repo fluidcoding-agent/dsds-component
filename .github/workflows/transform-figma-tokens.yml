@@ -1,0 +1,89 @@
+name: Transform Figma Tokens to Css
+
+on:
+  push:
+    paths:
+      - "design/tokens.json"
+    branches:
+      - main
+  pull_request:
+    paths:
+      - "design/tokens.json"
+    branches:
+      - "!dev"
+    types:
+      - closed
+
+jobs:
+  create-theme:
+    name: Create Theme Resources
+    runs-on: [self-hosted]
+    environment: Build
+    if: |
+      github.event_name == 'push' ||
+      (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
+    steps:
+      # step 0. 체크아웃
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 전체 커밋 히스토리를 가져오기 위해 fetch-depth를 0으로 설정
+      # step 1. 종속성 모듈 설치
+      - name: Install Dependencies
+        run: pnpm i
+      # step 2. 토큰 및 테마 생성
+      - name: Create Tokens and Theme Resources
+        run: pnpm build:themes
+      # step 3. 변경사항 확인
+      - name: Check for uncommitted changes
+        id: git_diff
+        run: |
+          git diff --quiet || echo "changes_exist=true" >> $GITHUB_OUTPUT
+      # step 4. design/tokens.json 변경 내용 저장
+      - name: Save design/tokens.json diff
+        id: tokens_diff
+        run: |
+          DIFF=$(git diff -U0 HEAD~1 -- design/tokens.json)
+          echo "TOKENS_DIFF<<EOF" >> $GITHUB_ENV
+          echo "$DIFF" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+      # step 5. 변경이 있을경우 변경점 저장
+      - name: Commit and Push changes
+        if: steps.git_diff.outputs.changes_exist == 'true'
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@samsung.com"
+          git add .
+          git commit -m "Workflow: Auto-commit file changes"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # step 6. 커밋 메시지 저장
+      - name: Save Commit Message
+        run: |
+          echo "COMMIT_MESSAGE<<EOF" >> $GITHUB_ENV
+          echo "${{ github.event.head_commit.message }}" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+      # step 7. 스토리북 빌드 및 배포
+      - name: Build and Publish Storybook
+        working-directory: ./packages/react/radix-ui
+        if: steps.git_diff.outputs.changes_exist == 'true'
+        run: |
+          ./scripts/deploy.sh
+      # step 8. mattermost 메시지 전송
+      - name: Send notification
+        run: |
+          export MATTERMOST_URL="${{ vars.MATTERMOST_URL }}"
+          export MATTERMOST_CHANNEL_ID="${{ vars.MATTERMOST_CHANNEL_ID }}"
+          export MATTERMOST_ACCESS_TOKEN="${{ secrets.MATTERMOST_ACCESS_TOKEN }}"
+          export DISCORD_WEBHOOK_URL="${{ secrets.DISCORD_WEBHOOK_URL}}"
+
+          BASE_URL="${{ vars.BASE_URL }}"
+          NOTI_TARGET="${{ vars.NOTI_TARGET }}"
+          STORYBOOK_URL="$BASE_URL/storybooks/react-radix-ui"
+          QUERY_STRING=$(echo "$COMMIT_MESSAGE" | grep -oP '\?path=[^\s]+' || true)
+          if [ -n "$QUERY_STRING" ]; then
+            STORYBOOK_URL+=$QUERY_STRING
+          fi
+          ESCAPED_COMMIT_MESSAGE=$(echo "$COMMIT_MESSAGE" | sed 's/`/\\`/g')
+          MESSAGE=$(echo -e "디자인 토큰 변경 사항이 빌드되어 [Storybook]($STORYBOOK_URL) 에 반영되었습니다.\n\n- **커밋 메세지**:\n\`\`\`\n$ESCAPED_COMMIT_MESSAGE\n\`\`\`\n\n- **Token 변경점 **:\n\`\`\`diff\n$TOKENS_DIFF\n\`\`\`")
+          pnpm node ./scripts/noti_message.js -t $NOTI_TARGET -m "$MESSAGE" -u "$STORYBOOK_URL"

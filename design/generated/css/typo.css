@@ -1,0 +1,129 @@
+:root {
+  --typo-basic-box-opt-message-default: 400 11px/12px SamsungOneKoreanNoF; /** Legend, Datatable 2nd Title, Datatable Item */
+  --typo-basic-box-label-default: 400 12px/14px SamsungOneKoreanNoF;
+}
+
+@utility typo-medium {
+  font: 400 14px/20px SamsungOneKoreanNoF;
+}
+
+@utility typo-modal-title {
+  font: 400 16px/20px SamsungOneKoreanNoF;
+}
+
+@utility typo-bold-medium {
+  font: 700 14px/20px SamsungOneKoreanNoF;
+}
+
+@utility typo-bold-small {
+  font: 700 12px/20px SamsungOneKoreanNoF;
+}
+
+@utility typo-body {
+  font: var(--typo-sok-body-14-400);
+}
+
+@utility typo-caption {
+  font: var(--typo-sok-caption-12-400);
+}
+
+@utility typo-caption-mono {
+  font: var(--typo-sok-caption-12-400);
+  font-family: var(--font-mono);
+}
+
+@utility typo-dialog-header {
+  font: 400 16px/20px SamsungOneKoreanNoF;
+}
+
+@utility typo-sok-h1-44-700 {
+  font: var(--typo-sok-h1-44-700);
+}
+
+@utility typo-sok-h2-32-700 {
+  font: var(--typo-sok-h2-32-700);
+}
+
+/** PageHeader Title(Cozy) */
+@utility typo-sok-h3-24-700 {
+  font: var(--typo-sok-h3-24-700);
+}
+
+/** PageHeader Title */
+@utility typo-sok-h4-20-700 {
+  font: var(--typo-sok-h4-20-700);
+}
+
+/** Dashboard Title, GNB Title */
+@utility typo-sok-h5-16-700 {
+  font: var(--typo-sok-h5-16-700);
+}
+
+/** Form Title */
+@utility typo-sok-h6-14-700 {
+  font: var(--typo-sok-h6-14-700);
+}
+
+/** btn */
+@utility typo-sok-h7-12-700 {
+  font: var(--typo-sok-h7-12-700);
+}
+
+@utility typo-sok-body-14-400 {
+  font: var(--typo-sok-body-14-400);
+}
+
+/** Utility, Datatable 1st Title, Breadcrumb */
+@utility typo-sok-caption-12-400 {
+  font: var(--typo-sok-caption-12-400);
+}
+
+/** Legend, Datatable 2nd Title, Datatable Item */
+@utility typo-sok-footnote-11-400 {
+  font: var(--typo-sok-footnote-11-400);
+}
+
+@utility typo-sss-h1-40-700 {
+  font: var(--typo-sss-h1-40-700);
+}
+
+@utility typo-sss-h2-28-700 {
+  font: var(--typo-sss-h2-28-700);
+}
+
+/** (Cozy)Pageheader */
+@utility typo-sss-h3-22-700 {
+  font: var(--typo-sss-h3-22-700);
+}
+
+@utility typo-sss-h4-19-700 {
+  font: var(--typo-sss-h4-19-700);
+}
+
+@utility typo-sss-h5-13-700 {
+  font: var(--typo-sss-h5-13-700);
+}
+
+/*****************************************************************************/
+/* Semantic Typography Tokens                                                */
+/*****************************************************************************/
+
+@utility typo-button-label-small {
+  font: var(--typo-button-label-small);
+}
+
+@utility typo-button-label-medium {
+  font: var(--typo-button-label-medium);
+}
+
+@utility typo-button-label-small-light {
+  font: var(--typo-button-label-small-light);
+}
+
+@utility typo-button-label-medium-light {
+  font: var(--typo-button-label-medium-light);
+}
+
+@utility typo-header-logo-title {
+  font: var(--typo-sss-h4-19-700);
+}

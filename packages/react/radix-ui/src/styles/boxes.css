@@ -1,0 +1,99 @@
+@import './variables';
+
+@theme inline {
+  --color-basic-box-text-hint: var(--color-text-on-box-on-box-hint);
+  --color-basic-box-text-value: var(--color-text-on-box-on-box-selected);
+  --color-basic-box-message-default: var(--color-text-text-disabled-optional);
+  --color-basic-box-message-emphasis: var(--color-text-brand);
+  --color-basic-box-message-danger: var(--color-text-danger);
+
+  --color-text-box-border-default: var(--color-border-on-box-enabled-disabled-selected);
+  --color-text-box-border-hover: var(--color-border-on-box-hover-selected-hover);
+  --color-text-box-border-focus: var(--color-border-border-activated-brand);
+  --color-text-box-border-disabled: var(--color-border-on-box-enabled-disabled-selected);
+  --color-text-box-text-disabled: var(--color-text-on-button-on-2ndary-disabled);
+  --color-text-box-bg-disabled: var(--color-bg-on-box-box-disabled);
+  --color-text-box-bg-default: var(--color-bg-on-box-box-default);
+
+  --color-text-box-bg-ghost: var(--color-bg-on-ghost-box-ghost-box-default);
+  --color-text-box-bg-ghost-hover: var(--color-bg-on-ghost-box-ghost-box-hover);
+  --color-text-box-bg-ghost-disabled: var(--color-bg-on-ghost-box-ghost-box-disabled);
+  --color-text-box-bg-ghost-populated: var(--color-bg-on-ghost-box-ghost-box-populated);
+  --color-text-box-bg-ghost-populated-hover: var(--color-bg-on-ghost-box-ghost-box-populated-hover);
+}
+
+@utility typo-box-label-default {
+  font: var(--typo-basic-box-label-default);
+}
+
+@utility typo-basic-box-message {
+  font: var(--typo-basic-box-opt-message-default);
+}
+
+@utility typo-box-label-small {
+  font: var(--typo-button-label-small-light);
+}
+
+@utility border-basic-box-demo {
+  box-shadow: inset 0 0 0 1px var(--color-border-btn-2ndary-border-default);
+}
+
+@utility border-basic-box-demo-light {
+  box-shadow: inset 0 0 0 1px var(--color-border-btn-2ndary-border-default);
+}
+
+@utility border-text-box-default {
+  box-shadow: inset 0 0 0 1px var(--color-text-box-border-default);
+}
+
+@utility border-text-box-hover {
+  box-shadow: inset 0 0 0 1px var(--color-text-box-border-hover);
+}
+
+@utility border-text-box-focus {
+  box-shadow: inset 0 0 0 1px var(--color-text-box-border-focus);
+}
+
+@utility border-text-box-disabled {
+  box-shadow: inset 0 0 0 1px var(--color-text-box-border-disabled);
+}
+
+@utility border-text-box-ghost-populated {
+  box-shadow: inset 0 0 0 1px var(--color-border-on-ghost-box-populated);
+}
+
+/* src/styles/text-box.css */
+@utility text-box-small {
+  @apply p-[var(--spacing-text-box-py-small)] text-[var(--typo-text-box-small)];
+}
+
+@utility text-box-medium {
+  @apply p-[var(--spacing-text-box-py-medium)] text-[var(--typo-text-box-medium)];
+}
+
+@utility text-box-large {
+  @apply p-[var(--spacing-text-box-py-large)] text-[var(--typo-text-box-large)];
+}
+
+/**
+ *  BoxesDemo 디버깅용
+ */
+.hover\:not-focus-within\:border-text-box-hover.hovered {
+  @apply border-text-box-hover;
+}
+
+.focus-within\:border-text-box-focus.focused {
+  @apply border-text-box-focus;
+}
+
+.focus-within\:bg-text-box-bg-default.focused {
+  @apply bg-text-box-bg-default;
+}
+
+.hover\:not-focus-within\:bg-text-box-bg-ghost-hover.hovered {
+  @apply bg-text-box-bg-ghost-hover;
+}
+
+.hover\:not-focus-within\:bg-text-box-bg-ghost-populated-hover.hovered {
+  @apply bg-text-box-bg-ghost-populated-hover;
+}

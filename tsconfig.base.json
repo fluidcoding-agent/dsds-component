@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    // === ECMAScript Target & Module System ===
+    "target": "ES2022",                        // 컴파일된 JS의 ECMAScript 버전
+    "module": "ESNext",                      // Node.js 환경에 맞는 모듈 시스템 사용
+    "lib": ["ES2022"],                         // 사용할 라이브러리(내장 객체 등) 지정
+
+    // === Module Resolution & Import Options ===
+    "moduleResolution": "bundler",             // 번들러 친화적 모듈 해석 방식
+    "esModuleInterop": true,                   // CommonJS 모듈의 ES6 방식 import 지원
+    "allowSyntheticDefaultImports": true,      // default export 없는 모듈도 default import 허용
+    "resolveJsonModule": true,                 // .json 파일 import 허용
+    "allowImportingTsExtensions": true,        // .ts 확장자 포함 import 허용
+    "isolatedModules": true,                   // 각 파일을 독립적으로 타입체크 (Babel 등과 호환)
+    "moduleDetection": "force",                // 항상 모듈로 간주
+
+    // === JSX & Emit Options ===
+    "jsx": "react-jsx",                        // React 17+ JSX 변환 방식 사용
+    "noEmit": true,                            // 실제 JS 파일 출력하지 않음 (타입체크 전용)
+
+    // === Strictness & Linting ===
+    "strict": true,                            // 모든 엄격한 타입 검사 활성화
+    "skipLibCheck": true,                      // 라이브러리 타입 검사 생략 (빌드 속도 향상)
+    "forceConsistentCasingInFileNames": true,  // 파일명 대소문자 일관성 검사
+    "noUnusedLocals": true,                    // 사용하지 않는 지역 변수 오류
+    "noUnusedParameters": true,                // 사용하지 않는 매개변수 오류
+    "noFallthroughCasesInSwitch": true,        // switch문에서 case 누락 방지
+    "noUncheckedSideEffectImports": true,      // 사이드 이펙트 import 경고
+    "useDefineForClassFields": true,           // 클래스 필드 정의 시 최신 표준 사용
+
+    // === Source Map & Output ===
+    "sourceMap": true,                         // 소스맵 생성
+    "outDir": "dist",                          // 출력 디렉토리
+
+    // === Path Aliases ===
+    "paths": {
+      "@/*": ["./src/*"],                      // 소스 코드 경로 별칭
+      "@tests/*": ["./tests/*"],               // 테스트 코드 경로 별칭
+      "@docs/*": ["./docs/*"]                  // 문서 경로 별칭
+    }
+  }
+}

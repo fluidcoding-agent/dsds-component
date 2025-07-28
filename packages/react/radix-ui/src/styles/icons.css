@@ -1,0 +1,66 @@
+.dsds-spinner {
+  --spinner-color: #ffffff;
+  animation: rotate 2s linear infinite;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+
+  & .path {
+    stroke: var(--spinner-color);
+    stroke-linecap: round;
+    animation: dash 1.4s ease-in-out infinite;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.dsds-spinner-brand {
+  --spinner-color: var(--color-button-primary-bg);
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+
+@theme inline {
+  --color-icon-path-default: var(--colors-neutral-neutral-01);
+  --color-check-off-bg-default: var(--colors-neutral-neutral-01);
+  --color-check-off-bg-disable: var(--colors-neutral-neutral-06);
+}
+
+@utiltiy path-opacity-disabled {
+  path {
+    opacity: 0.35;
+  }
+}
+
+@utility border-check-off-default {
+  border: 1px solid var(--colors-neutral-neutral-09);
+}
+
+@utility border-check-off-hover {
+  border: 1px solid var(--colors-neutral-neutral-12);
+}
+
+@utility border-icon-hover {
+  outline: 1px solid var(--color-icon-border-hover);
+}

@@ -1,0 +1,42 @@
+{
+  "name": "@dsds/fonts",
+  "version": "0.1.0",
+  "author": "김용기, 조무영 <dsds.srv@samsung.com>",
+  "description": "DS 디자인 시스템 공통 폰트 라이브러리",
+  "main": "src/fonts.css",
+  "style": "src/fonts.css",
+  "module": "dist/fonts.css",
+  "files": [
+    "README.md",
+    "dist"
+  ],
+  "exports": {
+    ".": "./dist/fonts.css",
+    "./index.css": "./dist/fonts.css",
+    "./fonts": "./dist/fonts"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.0",
+    "@tailwindcss/vite": "^4.1.8",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^4.4.1",
+    "eslint": "^9.28.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.1",
+    "eslint-plugin-react-compiler": "19.0.0-beta-af1b7da-20250417",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "eslint-plugin-storybook": "^9",
+    "prettier": "^3.5.3",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.30.1",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4",
+    "vite-plugin-static-copy": "^3.0.0"
+  }
+}

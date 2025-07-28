@@ -1,0 +1,116 @@
+@import "./variables";
+@import "./boxes.css";
+
+:root {
+  --color-bg-on-popover: white;
+}
+
+@theme inline {
+  /* Dropdown colors - semantic mapping */
+  --color-dropdown-bg: var(--color-bg-on-popover);
+  --color-dropdown-text: var(--color-text-on-popover);
+  --color-dropdown-border: var(--color-border-outline);
+  --color-dropdown-shadow: var(--color-shadow-elevation-medium);
+  --color-dropdown-bg-hover: var(--color-bg-on-item-list-datatable-hover);
+
+  /* Dropdown item colors */
+  --color-dropdown-item-bg-hover: var(--color-bg-on-item-list-datatable-hover);
+  --color-dropdown-item-text-hover: var(--color-text-on-accent-foreground);
+  --color-dropdown-item-text-destructive: var(--color-text-destructive);
+  --color-dropdown-item-bg-destructive-hover: var(--color-bg-destructive-10);
+  --color-dropdown-item-text-muted: var(--color-text-muted-foreground);
+
+  /* Dropdown trigger colors */
+  --color-dropdown-trigger-bg: var(--color-bg-on-input-default);
+  --color-dropdown-trigger-text: var(--color-text-on-box-on-box-hint);
+  --color-dropdown-trigger-bg-disabled: var(--color-bg-on-input-disabled);
+  --color-dropdown-trigger-text-disabled: var(--color-text-on-input-disabled);
+
+  /* Dropdown spacing */
+  --spacing-dropdown-trigger-px: var(--spacing-12px);
+  --spacing-dropdown-trigger-py: var(--spacing-8px);
+  --spacing-dropdown-content-p: var(--spacing-1px);
+  --spacing-dropdown-item-px: var(--spacing-10px);
+  --spacing-dropdown-item-py: var(--spacing-2px);
+  --spacing-dropdown-item-gap: var(--spacing-8px);
+  --spacing-dropdown-item-height: 26px;
+}
+
+/* Dropdown utility classes */
+@utility bg-dropdown-bg {
+  background-color: var(--color-dropdown-bg);
+}
+
+@utility shadow-dropdown {
+  @apply shadow-md;
+}
+
+/* Dropdown item utility classes */
+@utility bg-dropdown-item-bg-hover {
+  background-color: blue;
+}
+
+@utility bg-dropdown-item-bg-destructive-hover {
+  background-color: var(--color-dropdown-item-bg-destructive-hover);
+}
+
+/* Dropdown trigger utility classes */
+@utility bg-dropdown-trigger-bg {
+  background-color: var(--color-dropdown-trigger-bg);
+}
+
+@utility border-dropdown-trigger-border {
+  box-shadow: inset 0 0 0 1px var(--color-text-box-border-default);
+}
+
+@utility border-dropdown-trigger-border-hover {
+  border-color: var(--color-dropdown-trigger-border-hover);
+}
+
+@utility border-dropdown-trigger-border-focus {
+  border-color: var(--color-dropdown-trigger-border-focus);
+}
+
+@utility bg-dropdown-trigger-bg-disabled {
+  background-color: var(--color-dropdown-trigger-bg-disabled);
+}
+
+@utility border-dropdown-trigger-border-disabled {
+  border-color: var(--color-dropdown-trigger-border-disabled);
+}
+
+/* Dropdown trigger sizing */
+@utility dropdown-trigger-padding {
+  padding: var(--spacing-dropdown-trigger-py) var(--spacing-dropdown-trigger-px);
+}
+
+/* Dropdown content styling */
+@utility dropdown-content-base {
+  @apply bg-dropdown-bg text-dropdown-text shadow-dropdown;
+  @apply !rounded-xs border-none;
+  @apply z-50 min-w-[8rem] overflow-y-auto;
+  transform-origin: center top !important;
+  scrollbar-width: thin !important;
+  padding: var(--spacing-dropdown-content-p);
+}
+
+/* Dropdown item styling */
+@utility dropdown-item-base {
+  @apply relative flex cursor-default items-center select-none;
+  @apply text-sm transition-colors outline-none;
+  @apply data-[disabled]:pointer-events-none data-[disabled]:opacity-50;
+  height: var(--spacing-dropdown-item-height);
+  padding: var(--spacing-dropdown-item-py) var(--spacing-dropdown-item-px);
+  gap: var(--spacing-dropdown-item-gap);
+}
+
+@utility dropdown-item-hover {
+  @apply data-[highlighted]:bg-dropdown-item-bg-hover;
+  @apply data-[highlighted]:text-dropdown-item-text-hover;
+}
+
+@utility dropdown-item-destructive {
+  @apply text-dropdown-item-text-destructive;
+  @apply data-[highlighted]:bg-dropdown-item-bg-destructive-hover;
+  @apply data-[highlighted]:text-dropdown-item-text-destructive;
+}

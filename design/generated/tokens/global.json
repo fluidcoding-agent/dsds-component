@@ -1,0 +1,1353 @@
+{
+  "Colors": {
+    "Neutral": {
+      "neutral_01": {
+        "$type": "color",
+        "$value": "#ffffff"
+      },
+      "neutral_02": {
+        "$type": "color",
+        "$value": "#fafbfc"
+      },
+      "neutral_03": {
+        "$type": "color",
+        "$value": "#f7f9fb"
+      },
+      "neutral_04": {
+        "$type": "color",
+        "$value": "#f3f6f8"
+      },
+      "neutral_05": {
+        "$type": "color",
+        "$value": "#eff4f6"
+      },
+      "neutral_06": {
+        "$type": "color",
+        "$value": "#edf2f4"
+      },
+      "neutral_07": {
+        "$type": "color",
+        "$value": "#e4e9ed"
+      },
+      "neutral_08": {
+        "$type": "color",
+        "$value": "#dadfe4"
+      },
+      "neutral_09": {
+        "$type": "color",
+        "$value": "#ccd1d6"
+      },
+      "neutral_10": {
+        "$type": "color",
+        "$value": "#c0c4c9"
+      },
+      "neutral_11": {
+        "$type": "color",
+        "$value": "#b2b6bb"
+      },
+      "neutral_12": {
+        "$type": "color",
+        "$value": "#a5abb1"
+      },
+      "neutral_13": {
+        "$type": "color",
+        "$value": "#90969d"
+      },
+      "neutral_14": {
+        "$type": "color",
+        "$value": "#767d84"
+      },
+      "neutral_15": {
+        "$type": "color",
+        "$value": "#565e66"
+      },
+      "neutral_16": {
+        "$type": "color",
+        "$value": "#384047"
+      },
+      "neutral_17": {
+        "$type": "color",
+        "$value": "#283037"
+      }
+    },
+    "Oxygen_Red": {
+      "o_red_01": {
+        "$type": "color",
+        "$value": "#fff8f8"
+      },
+      "o_red_01-2": {
+        "$type": "color",
+        "$value": "#fff8f8"
+      },
+      "o_red_02": {
+        "$type": "color",
+        "$value": "#fff6f5"
+      },
+      "o_red_03": {
+        "$type": "color",
+        "$value": "#ffeceb"
+      },
+      "o_red_04": {
+        "$type": "color",
+        "$value": "#ffd9d7"
+      },
+      "o_red_05": {
+        "$type": "color",
+        "$value": "#ffc7c3"
+      },
+      "o_red_06": {
+        "$type": "color",
+        "$value": "#ffb4af"
+      },
+      "o_red_07": {
+        "$type": "color",
+        "$value": "#ff8e87"
+      },
+      "o_red_08": {
+        "$type": "color",
+        "$value": "#ff695f"
+      },
+      "o_red_09": {
+        "$type": "color",
+        "$value": "#ff4337"
+      },
+      "o_red_10": {
+        "$type": "color",
+        "$value": "#d2362c"
+      },
+      "o_red_11": {
+        "$type": "color",
+        "$value": "#a52921"
+      },
+      "o_red_12": {
+        "$type": "color",
+        "$value": "#781c16"
+      },
+      "o_red_13": {
+        "$type": "color",
+        "$value": "#621611"
+      },
+      "o_red_14": {
+        "$type": "color",
+        "$value": "#4b0f0b"
+      },
+      "o_red_15": {
+        "$type": "color",
+        "$value": "#390906"
+      },
+      "o_red_16": {
+        "$type": "color",
+        "$value": "#230200"
+      }
+    },
+    "Die_Green": {
+      "die_green_01": {
+        "$type": "color",
+        "$value": "#fafdf7"
+      },
+      "die_green_02": {
+        "$type": "color",
+        "$value": "#f8fcf3"
+      },
+      "die_green_03": {
+        "$type": "color",
+        "$value": "#f5fbee"
+      },
+      "die_green_04": {
+        "$type": "color",
+        "$value": "#eaf7dc"
+      },
+      "die_green_05": {
+        "$type": "color",
+        "$value": "#e0f2cb"
+      },
+      "die_green_06": {
+        "$type": "color",
+        "$value": "#d5eeba"
+      },
+      "die_green_07": {
+        "$type": "color",
+        "$value": "#c0e697"
+      },
+      "die_green_08": {
+        "$type": "color",
+        "$value": "#abdd75"
+      },
+      "die_green_09": {
+        "$type": "color",
+        "$value": "#96d552"
+      },
+      "die_green_10": {
+        "$type": "color",
+        "$value": "#7cb143"
+      },
+      "die_green_11": {
+        "$type": "color",
+        "$value": "#628d34"
+      },
+      "die_green_12": {
+        "$type": "color",
+        "$value": "#486826"
+      },
+      "die_green_13": {
+        "$type": "color",
+        "$value": "#3b561e"
+      },
+      "die_green_14": {
+        "$type": "color",
+        "$value": "#2e4417"
+      },
+      "die_green_15": {
+        "$type": "color",
+        "$value": "#21320f"
+      },
+      "die_green_16": {
+        "$type": "color",
+        "$value": "#142008"
+      }
+    },
+    "Copper_Yellow": {
+      "cu_yellow_01": {
+        "$type": "color",
+        "$value": "#fffcf8"
+      },
+      "cu_yellow_03": {
+        "$type": "color",
+        "$value": "#fff8ed"
+      },
+      "cu_yellow_04": {
+        "$type": "color",
+        "$value": "#fff0da"
+      },
+      "cu_yellow_05": {
+        "$type": "color",
+        "$value": "#ffe9c8"
+      },
+      "cu_yellow_06": {
+        "$type": "color",
+        "$value": "#ffe1b5"
+      },
+      "cu_yellow_07": {
+        "$type": "color",
+        "$value": "#ffd390"
+      },
+      "cu_yellow_08": {
+        "$type": "color",
+        "$value": "#ffc46b"
+      },
+      "cu_yellow_09": {
+        "$type": "color",
+        "$value": "#ffb546"
+      },
+      "cu_yellow_10": {
+        "$type": "color",
+        "$value": "#d59638"
+      },
+      "cu_yellow_11": {
+        "$type": "color",
+        "$value": "#ab772a"
+      },
+      "cu_yellow_12": {
+        "$type": "color",
+        "$value": "#80591c"
+      },
+      "cu_yellow_13": {
+        "$type": "color",
+        "$value": "#6b4915"
+      },
+      "cu_yellow_14": {
+        "$type": "color",
+        "$value": "#563a0e"
+      },
+      "cu_yellow_15": {
+        "$type": "color",
+        "$value": "#412a07"
+      },
+      "cu_yellow_16": {
+        "$type": "color",
+        "$value": "#2c1b00"
+      },
+      "cu_yellow_02": {
+        "$type": "color",
+        "$value": "#fffaf2"
+      }
+    },
+    "Gate_Purple": {
+      "gate_purple_01": {
+        "$type": "color",
+        "$value": "#f9fafe"
+      },
+      "gate_purple_02": {
+        "$type": "color",
+        "$value": "#f7f8fd"
+      },
+      "gate_purple_03": {
+        "$type": "color",
+        "$value": "#f2f4fc"
+      },
+      "gate_purple_04": {
+        "$type": "color",
+        "$value": "#e6e9f8"
+      },
+      "gate_purple_05": {
+        "$type": "color",
+        "$value": "#d9def5"
+      },
+      "gate_purple_06": {
+        "$type": "color",
+        "$value": "#ccd3f1"
+      },
+      "gate_purple_07": {
+        "$type": "color",
+        "$value": "#b3beea"
+      },
+      "gate_purple_08": {
+        "$type": "color",
+        "$value": "#99a8e3"
+      },
+      "gate_purple_09": {
+        "$type": "color",
+        "$value": "#8092dc"
+      },
+      "gate_purple_10": {
+        "$type": "color",
+        "$value": "#6978b8"
+      },
+      "gate_purple_11": {
+        "$type": "color",
+        "$value": "#515e94"
+      },
+      "gate_purple_12": {
+        "$type": "color",
+        "$value": "#3a4571"
+      },
+      "gate_purple_13": {
+        "$type": "color",
+        "$value": "#2e385f"
+      },
+      "gate_purple_14": {
+        "$type": "color",
+        "$value": "#222b4d"
+      },
+      "gate_purple_15": {
+        "$type": "color",
+        "$value": "#171e3b"
+      },
+      "gate_purple_16": {
+        "$type": "color",
+        "$value": "#0b1129"
+      }
+    },
+    "Wafer_Blue": {
+      "wafer_blue_01": {
+        "$type": "color",
+        "$value": "#f7fbfd"
+      },
+      "wafer_blue_02": {
+        "$type": "color",
+        "$value": "#f3f8fd"
+      },
+      "wafer_blue_03": {
+        "$type": "color",
+        "$value": "#e6f1fa"
+      },
+      "wafer_blue_04": {
+        "$type": "color",
+        "$value": "#cce4f4"
+      },
+      "wafer_blue_05": {
+        "$type": "color",
+        "$value": "#b3d6ef"
+      },
+      "wafer_blue_06": {
+        "$type": "color",
+        "$value": "#99c9e9"
+      },
+      "wafer_blue_07": {
+        "$type": "color",
+        "$value": "#66adde"
+      },
+      "wafer_blue_08": {
+        "$type": "color",
+        "$value": "#3392d3"
+      },
+      "wafer_blue_09": {
+        "$type": "color",
+        "$value": "#0077c8"
+      },
+      "wafer_blue_10": {
+        "$type": "color",
+        "$value": "#0064a7"
+      },
+      "wafer_blue_11": {
+        "$type": "color",
+        "$value": "#005087"
+      },
+      "wafer_blue_12": {
+        "$type": "color",
+        "$value": "#003d66"
+      },
+      "wafer_blue_13": {
+        "$type": "color",
+        "$value": "#003356"
+      },
+      "wafer_blue_14": {
+        "$type": "color",
+        "$value": "#002946"
+      },
+      "wafer_blue_15": {
+        "$type": "color",
+        "$value": "#002035"
+      },
+      "wafer_blue_16": {
+        "$type": "color",
+        "$value": "#001625"
+      }
+    },
+    "PhotoResist_Green": {
+      "pr_green_01": {
+        "$type": "color",
+        "$value": "#f7fdfd"
+      },
+      "pr_green_02": {
+        "$type": "color",
+        "$value": "#f3fcfb"
+      },
+      "pr_green_03": {
+        "$type": "color",
+        "$value": "#e6f9f7"
+      },
+      "pr_green_04": {
+        "$type": "color",
+        "$value": "#ccf3ef"
+      },
+      "pr_green_05": {
+        "$type": "color",
+        "$value": "#b3ede8"
+      },
+      "pr_green_06": {
+        "$type": "color",
+        "$value": "#99e7e0"
+      },
+      "pr_green_07": {
+        "$type": "color",
+        "$value": "#66dbd0"
+      },
+      "pr_green_08": {
+        "$type": "color",
+        "$value": "#33cfc1"
+      },
+      "pr_green_09": {
+        "$type": "color",
+        "$value": "#00c3b1"
+      },
+      "pr_green_10": {
+        "$type": "color",
+        "$value": "#00a192"
+      },
+      "pr_green_11": {
+        "$type": "color",
+        "$value": "#008074"
+      },
+      "pr_green_12": {
+        "$type": "color",
+        "$value": "#005e55"
+      },
+      "pr_green_13": {
+        "$type": "color",
+        "$value": "#004d46"
+      },
+      "pr_green_14": {
+        "$type": "color",
+        "$value": "#003d37"
+      },
+      "pr_green_15": {
+        "$type": "color",
+        "$value": "#002c27"
+      },
+      "pr_green_16": {
+        "$type": "color",
+        "$value": "#001e1b"
+      }
+    },
+    "Dioxide_Film_Blue": {
+      "df_blue_01": {
+        "$type": "color",
+        "$value": "#f7fdfe"
+      },
+      "df_blue_02": {
+        "$type": "color",
+        "$value": "#f3fbfd"
+      },
+      "df_blue_03": {
+        "$type": "color",
+        "$value": "#e6f7fc"
+      },
+      "df_blue_04": {
+        "$type": "color",
+        "$value": "#ccf0f9"
+      },
+      "df_blue_05": {
+        "$type": "color",
+        "$value": "#b3e8f6"
+      },
+      "df_blue_06": {
+        "$type": "color",
+        "$value": "#99e1f3"
+      },
+      "df_blue_07": {
+        "$type": "color",
+        "$value": "#66d1ee"
+      },
+      "df_blue_08": {
+        "$type": "color",
+        "$value": "#33c2e8"
+      },
+      "df_blue_09": {
+        "$type": "color",
+        "$value": "#00b3e2"
+      },
+      "df_blue_10": {
+        "$type": "color",
+        "$value": "#0093ba"
+      },
+      "df_blue_11": {
+        "$type": "color",
+        "$value": "#007492"
+      },
+      "df_blue_12": {
+        "$type": "color",
+        "$value": "#00546b"
+      },
+      "df_blue_13": {
+        "$type": "color",
+        "$value": "#004457"
+      },
+      "df_blue_14": {
+        "$type": "color",
+        "$value": "#003543"
+      },
+      "df_blue_15": {
+        "$type": "color",
+        "$value": "#00252f"
+      },
+      "df_blue_16": {
+        "$type": "color",
+        "$value": "#00181f"
+      }
+    },
+    "No-Color": {
+      "$type": "color",
+      "$value": "#00000000"
+    },
+    "Nitrogen_Green": {
+      "n_green_01": {
+        "$type": "color",
+        "$value": "#f9fdf9"
+      },
+      "n_green_02": {
+        "$type": "color",
+        "$value": "#f5fbf5"
+      },
+      "n_green_03": {
+        "$type": "color",
+        "$value": "#eaf8eb"
+      },
+      "n_green_04": {
+        "$type": "color",
+        "$value": "#d4f1d7"
+      },
+      "n_green_05": {
+        "$type": "color",
+        "$value": "#bfebc4"
+      },
+      "n_green_06": {
+        "$type": "color",
+        "$value": "#aae4b0"
+      },
+      "n_green_07": {
+        "$type": "color",
+        "$value": "#7fd688"
+      },
+      "n_green_08": {
+        "$type": "color",
+        "$value": "#55c961"
+      },
+      "n_green_09": {
+        "$type": "color",
+        "$value": "#2abb39"
+      },
+      "n_green_10": {
+        "$type": "color",
+        "$value": "#239b2f"
+      },
+      "n_green_11": {
+        "$type": "color",
+        "$value": "#1c7c26"
+      },
+      "n_green_12": {
+        "$type": "color",
+        "$value": "#145c1c"
+      },
+      "n_green_13": {
+        "$type": "color",
+        "$value": "#114c17"
+      },
+      "n_green_14": {
+        "$type": "color",
+        "$value": "#0d3d13"
+      },
+      "n_green_15": {
+        "$type": "color",
+        "$value": "#0a2d0e"
+      },
+      "n_green_16": {
+        "$type": "color",
+        "$value": "#061d09"
+      }
+    }
+  },
+  "SOK_Heading": {
+    "$type": "text",
+    "$value": "44"
+  },
+  "Spacing": {
+    "0": {
+      "$type": "number",
+      "$value": 0
+    },
+    "2": {
+      "$type": "number",
+      "$value": 2
+    },
+    "4": {
+      "$type": "number",
+      "$value": 4
+    },
+    "5": {
+      "$type": "number",
+      "$value": 5
+    },
+    "6": {
+      "$type": "number",
+      "$value": 6
+    },
+    "8": {
+      "$type": "number",
+      "$value": 8
+    },
+    "12": {
+      "$type": "number",
+      "$value": 12
+    },
+    "16": {
+      "$type": "number",
+      "$value": 16
+    },
+    "20": {
+      "$type": "number",
+      "$value": 20
+    },
+    "24": {
+      "$type": "number",
+      "$value": 24
+    },
+    "28": {
+      "$type": "number",
+      "$value": 28
+    },
+    "32": {
+      "$type": "number",
+      "$value": 32
+    },
+    "36": {
+      "$type": "number",
+      "$value": 36
+    },
+    "40": {
+      "$type": "number",
+      "$value": 40
+    }
+  },
+  "Radious": {
+    "R-None": {
+      "$type": "number",
+      "$value": 0
+    },
+    "R-XS": {
+      "$type": "number",
+      "$value": 1
+    },
+    "R-S": {
+      "$type": "number",
+      "$value": 2
+    },
+    "R-M": {
+      "$type": "number",
+      "$value": 4
+    },
+    "R-L": {
+      "$type": "number",
+      "$value": 6
+    },
+    "R-XL": {
+      "$type": "number",
+      "$value": 8
+    }
+  },
+  "fontFamilies": {
+    "samsungonekoreannof": {
+      "$type": "fontFamilies",
+      "$value": "SamsungOneKoreanNoF"
+    },
+    "samsung-sharp-sans": {
+      "$type": "fontFamilies",
+      "$value": "Samsung Sharp Sans"
+    }
+  },
+  "lineHeights": {
+    "0": {
+      "$type": "number",
+      "$value": 54
+    },
+    "1": {
+      "$type": "number",
+      "$value": 36
+    },
+    "2": {
+      "$type": "number",
+      "$value": 28
+    },
+    "3": {
+      "$type": "number",
+      "$value": 24
+    },
+    "4": {
+      "$type": "number",
+      "$value": 20
+    },
+    "5": {
+      "$type": "number",
+      "$value": 20
+    },
+    "6": {
+      "$type": "number",
+      "$value": 20
+    },
+    "7": {
+      "$type": "number",
+      "$value": 20
+    },
+    "8": {
+      "$type": "number",
+      "$value": 14
+    },
+    "9": {
+      "$type": "number",
+      "$value": 12
+    },
+    "10": {
+      "$type": "number",
+      "$value": 54
+    },
+    "11": {
+      "$type": "number",
+      "$value": 36
+    },
+    "12": {
+      "$type": "number",
+      "$value": 28
+    },
+    "13": {
+      "$type": "number",
+      "$value": 24
+    },
+    "14": {
+      "$type": "number",
+      "$value": 16
+    },
+    "15": {
+      "$type": "number",
+      "$value": 20
+    },
+    "16": {
+      "$type": "number",
+      "$value": 20
+    }
+  },
+  "fontWeights": {
+    "samsung-sharp-sans-2": {
+      "$type": "fontWeights",
+      "$value": "Bold"
+    },
+    "samsungonekoreannof-0": {
+      "$type": "fontWeights",
+      "$value": "700"
+    },
+    "samsungonekoreannof-1": {
+      "$type": "fontWeights",
+      "$value": "400"
+    }
+  },
+  "fontSize": {
+    "0": {
+      "$type": "number",
+      "$value": 44
+    },
+    "1": {
+      "$type": "number",
+      "$value": 32
+    },
+    "2": {
+      "$type": "number",
+      "$value": 24
+    },
+    "3": {
+      "$type": "number",
+      "$value": 20
+    },
+    "4": {
+      "$type": "number",
+      "$value": 16
+    },
+    "5": {
+      "$type": "number",
+      "$value": 14
+    },
+    "6": {
+      "$type": "number",
+      "$value": 12
+    },
+    "7": {
+      "$type": "number",
+      "$value": 14
+    },
+    "8": {
+      "$type": "number",
+      "$value": 12
+    },
+    "9": {
+      "$type": "number",
+      "$value": 11
+    },
+    "10": {
+      "$type": "number",
+      "$value": 40
+    },
+    "11": {
+      "$type": "number",
+      "$value": 28
+    },
+    "12": {
+      "$type": "number",
+      "$value": 22
+    },
+    "13": {
+      "$type": "number",
+      "$value": 19
+    },
+    "14": {
+      "$type": "number",
+      "$value": 13
+    },
+    "15": {
+      "$type": "number",
+      "$value": 14
+    },
+    "16": {
+      "$type": "number",
+      "$value": 12
+    }
+  },
+  "letterSpacing": {
+    "0": {
+      "$type": "number",
+      "$value": 0.8
+    },
+    "1": {
+      "$type": "number",
+      "$value": 0.8
+    },
+    "2": {
+      "$type": "number",
+      "$value": 0.8
+    },
+    "3": {
+      "$type": "number",
+      "$value": 0.8
+    },
+    "4": {
+      "$type": "number",
+      "$value": 0.8
+    },
+    "5": {
+      "$type": "number",
+      "$value": 0.8
+    },
+    "6": {
+      "$type": "number",
+      "$value": 0.8
+    },
+    "7": {
+      "$type": "number",
+      "$value": 0.8
+    },
+    "8": {
+      "$type": "number",
+      "$value": 0.8
+    },
+    "9": {
+      "$type": "number",
+      "$value": 0.8
+    },
+    "10": {
+      "$type": "number",
+      "$value": 0.8
+    },
+    "11": {
+      "$type": "number",
+      "$value": 0.8
+    },
+    "12": {
+      "$type": "number",
+      "$value": 0.8
+    },
+    "13": {
+      "$type": "number",
+      "$value": 0.8
+    },
+    "14": {
+      "$type": "number",
+      "$value": 0.8
+    },
+    "15": {
+      "$type": "number",
+      "$value": 0.8
+    },
+    "16": {
+      "$type": "number",
+      "$value": 0.8
+    }
+  },
+  "paragraphSpacing": {
+    "0": {
+      "$type": "number",
+      "$value": 0
+    },
+    "1": {
+      "$type": "number",
+      "$value": 0
+    },
+    "2": {
+      "$type": "number",
+      "$value": 0
+    },
+    "3": {
+      "$type": "number",
+      "$value": 0
+    },
+    "4": {
+      "$type": "number",
+      "$value": 0
+    },
+    "5": {
+      "$type": "number",
+      "$value": 0
+    },
+    "6": {
+      "$type": "number",
+      "$value": 0
+    },
+    "7": {
+      "$type": "number",
+      "$value": 0
+    },
+    "8": {
+      "$type": "number",
+      "$value": 0
+    },
+    "9": {
+      "$type": "number",
+      "$value": 0
+    },
+    "10": {
+      "$type": "number",
+      "$value": 0
+    },
+    "11": {
+      "$type": "number",
+      "$value": 0
+    },
+    "12": {
+      "$type": "number",
+      "$value": 0
+    },
+    "13": {
+      "$type": "number",
+      "$value": 0
+    },
+    "14": {
+      "$type": "number",
+      "$value": 0
+    },
+    "15": {
+      "$type": "number",
+      "$value": 0
+    },
+    "16": {
+      "$type": "number",
+      "$value": 0
+    }
+  },
+  "SOK": {
+    "H1-44-700": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.samsungonekoreannof}",
+        "fontWeight": "{fontWeights.samsungonekoreannof-0}",
+        "lineHeight": "{lineHeights.0}",
+        "fontSize": "{fontSize.0}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "$description": "정보보호신청포탈 배너 타이틀로 사용 됨"
+    },
+    "H2-32-700": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.samsungonekoreannof}",
+        "fontWeight": "{fontWeights.samsungonekoreannof-0}",
+        "lineHeight": "{lineHeights.1}",
+        "fontSize": "{fontSize.1}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      }
+    },
+    "H3-24-700": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.samsungonekoreannof}",
+        "fontWeight": "{fontWeights.samsungonekoreannof-0}",
+        "lineHeight": "{lineHeights.2}",
+        "fontSize": "{fontSize.2}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "$description": "PageHeader Title(Cozy)"
+    },
+    "H4-20-700": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.samsungonekoreannof}",
+        "fontWeight": "{fontWeights.samsungonekoreannof-0}",
+        "lineHeight": "{lineHeights.3}",
+        "fontSize": "{fontSize.3}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "$description": "PageHeader Title"
+    },
+    "H5-16-700": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.samsungonekoreannof}",
+        "fontWeight": "{fontWeights.samsungonekoreannof-0}",
+        "lineHeight": "{lineHeights.4}",
+        "fontSize": "{fontSize.4}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "$description": "Dashboard Title, GNB Title"
+    },
+    "H6-14-700": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.samsungonekoreannof}",
+        "fontWeight": "{fontWeights.samsungonekoreannof-0}",
+        "lineHeight": "{lineHeights.4}",
+        "fontSize": "{fontSize.5}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "$description": "Form Title"
+    },
+    "H7-12-700": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.samsungonekoreannof}",
+        "fontWeight": "{fontWeights.samsungonekoreannof-0}",
+        "lineHeight": "{lineHeights.4}",
+        "fontSize": "{fontSize.6}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "$description": "btn"
+    },
+    "Body-14-400": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.samsungonekoreannof}",
+        "fontWeight": "{fontWeights.samsungonekoreannof-1}",
+        "lineHeight": "{lineHeights.4}",
+        "fontSize": "{fontSize.5}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      }
+    },
+    "Caption-12-400": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.samsungonekoreannof}",
+        "fontWeight": "{fontWeights.samsungonekoreannof-1}",
+        "lineHeight": "{lineHeights.8}",
+        "fontSize": "{fontSize.6}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "$description": "Utility, Datatable 1st Title, Breadcrumb"
+    },
+    "Footnote-11-400": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.samsungonekoreannof}",
+        "fontWeight": "{fontWeights.samsungonekoreannof-1}",
+        "lineHeight": "{lineHeights.9}",
+        "fontSize": "{fontSize.9}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "$description": "Legend, Datatable 2nd Title, Datatable Item"
+    }
+  },
+  "SSS": {
+    "H1-40-700": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.samsung-sharp-sans}",
+        "fontWeight": "{fontWeights.samsung-sharp-sans-2}",
+        "lineHeight": "{lineHeights.0}",
+        "fontSize": "{fontSize.10}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      }
+    },
+    "H2-28-700": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.samsung-sharp-sans}",
+        "fontWeight": "{fontWeights.samsung-sharp-sans-2}",
+        "lineHeight": "{lineHeights.1}",
+        "fontSize": "{fontSize.11}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      }
+    },
+    "H3-22-700": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.samsung-sharp-sans}",
+        "fontWeight": "{fontWeights.samsung-sharp-sans-2}",
+        "lineHeight": "{lineHeights.2}",
+        "fontSize": "{fontSize.12}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      },
+      "$description": "(Cozy)Pageheader"
+    },
+    "H4-19-700": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.samsung-sharp-sans}",
+        "fontWeight": "{fontWeights.samsung-sharp-sans-2}",
+        "lineHeight": "{lineHeights.3}",
+        "fontSize": "{fontSize.13}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      }
+    },
+    "H5-13-700": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{fontFamilies.samsung-sharp-sans}",
+        "fontWeight": "{fontWeights.samsung-sharp-sans-2}",
+        "lineHeight": "{lineHeights.14}",
+        "fontSize": "{fontSize.14}",
+        "letterSpacing": "{letterSpacing.0}",
+        "paragraphSpacing": "{paragraphSpacing.0}",
+        "paragraphIndent": "{paragraphIndent.0}",
+        "textCase": "{textCase.none}",
+        "textDecoration": "{textDecoration.none}"
+      }
+    }
+  },
+  "textCase": {
+    "none": {
+      "$type": "textCase",
+      "$value": "none"
+    }
+  },
+  "textDecoration": {
+    "none": {
+      "$type": "textDecoration",
+      "$value": "none"
+    }
+  },
+  "paragraphIndent": {
+    "0": {
+      "$type": "number",
+      "$value": 0
+    },
+    "1": {
+      "$type": "number",
+      "$value": 1
+    }
+  },
+  "Shadow-1": {
+    "$type": "boxShadow",
+    "$value": [
+      {
+        "color": "#2830371f",
+        "type": "dropShadow",
+        "x": 0,
+        "y": 0,
+        "blur": 2,
+        "spread": 0
+      },
+      {
+        "color": "#2830371f",
+        "type": "dropShadow",
+        "x": 0,
+        "y": 1,
+        "blur": 2,
+        "spread": 0
+      }
+    ],
+    "$description": "첫번째 높이의 페이지입니다.\n- Page_Contents에 사용"
+  },
+  "Shadow-2": {
+    "$type": "boxShadow",
+    "$value": [
+      {
+        "color": "#2830371f",
+        "type": "dropShadow",
+        "x": 0,
+        "y": 0,
+        "blur": 2,
+        "spread": 0
+      },
+      {
+        "color": "#2830371f",
+        "type": "dropShadow",
+        "x": 0,
+        "y": 4,
+        "blur": 8,
+        "spread": 1
+      }
+    ]
+  },
+  "Shadow-3": {
+    "$type": "boxShadow",
+    "$value": [
+      {
+        "color": "#2830371f",
+        "type": "dropShadow",
+        "x": 0,
+        "y": 0,
+        "blur": 2,
+        "spread": 0
+      },
+      {
+        "color": "#28303724",
+        "type": "dropShadow",
+        "x": 0,
+        "y": 8,
+        "blur": 14,
+        "spread": 4
+      }
+    ]
+  },
+  "Shadow-4": {
+    "$type": "boxShadow",
+    "$value": [
+      {
+        "color": "#2830371f",
+        "type": "dropShadow",
+        "x": 0,
+        "y": 0,
+        "blur": 2,
+        "spread": 0
+      },
+      {
+        "color": "#28303729",
+        "type": "dropShadow",
+        "x": 0,
+        "y": 10,
+        "blur": 18,
+        "spread": 1
+      }
+    ]
+  },
+  "Shadow-5": {
+    "$type": "boxShadow",
+    "$value": [
+      {
+        "color": "#2830371f",
+        "type": "dropShadow",
+        "x": 0,
+        "y": 0,
+        "blur": 2,
+        "spread": 0
+      },
+      {
+        "color": "#28303733",
+        "type": "dropShadow",
+        "x": 0,
+        "y": 12,
+        "blur": 20,
+        "spread": 2
+      }
+    ]
+  }
+}

@@ -1,0 +1,347 @@
+@import "./global.css";
+@import "./light.css";
+@import "./typo.css";
+
+:root {
+  font-family: var(--font-sans);
+  --background: var(--color-bg-surface-primary);
+  --foreground: var(--color-text-text-neutral-1st);
+}
+
+@theme inline {
+  /** TailwindCSS base override: 14px */
+  --text-base: 0.875rem;
+
+  /* === TYPOGRAPHY === */
+  --font-sans: "SamsungOneKoreanNoF", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Samsung Sharp Sans", "SamsungOneKoreanNoF", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: D2Coding, Consolas, "Courier New", ui-monospace, monospace;
+
+  /* === FOUNDATIONS === */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* === SEMANTIC STATUS COLORS (기존 가이드 기준) === */
+  --color-brand: var(--color-text-brand);
+  --color-brand-hover: var(--color-bg-on-button-brand-hover);
+  --color-info: var(--color-text-brand);
+  --color-success: var(--colors-nitrogen-green-n-green-07);
+  --color-danger: var(--color-text-danger);
+  --color-warning: var(--color-text-warning);
+  --color-border-focus: var(--color-border-border-activated-brand);
+
+  /* === NEUTRAL COLORS (기존 가이드 기준) === */
+  --color-neutral-1st: var(--color-text-text-neutral-1st);
+  --color-neutral-2nd: var(--color-text-text-neutral-2nd);
+  --color-neutral-3rd: var(--color-text-text-neutral-3rd);
+  --color-body: var(--color-neutral-1st);
+  --color-surface: var(--color-bg-surface-primary);
+  --color-surface-2: var(--color-bg-surface-secondary);
+
+  /* === CONTENT HIERARCHY COLORS === */
+  /* 제목과 주요 텍스트: 가장 진한 중성 색상 (최고 가독성) */
+  --color-heading: var(--colors-neutral-neutral-15);
+  --color-text-primary: var(--colors-neutral-neutral-15);
+
+  /* 본문 텍스트: 적당한 진한 색상 (좋은 가독성) */
+  --color-text-body: var(--colors-neutral-neutral-13);
+
+  /* 보조 텍스트: 중간 진한 색상 (캡션, 설명 등) */
+  --color-text-secondary: var(--colors-neutral-neutral-11);
+  --color-text-caption: var(--colors-neutral-neutral-11);
+
+  /* 비활성화/힌트 텍스트: 연한 색상 */
+  --color-text-muted: var(--colors-neutral-neutral-09);
+  --color-text-disabled: var(--colors-neutral-neutral-07);
+
+  /* === SURFACE COLORS === */
+  /* 기본 배경: 흰색 */
+  --color-surface-primary: var(--colors-neutral-neutral-01);
+  /* 보조 배경: 매우 연한 회색 (카드, 섹션 구분) */
+  --color-surface-secondary: var(--colors-neutral-neutral-02);
+  /* 강조 배경: 연한 회색 (호버 상태 등) */
+  --color-surface-tertiary: var(--colors-neutral-neutral-04);
+
+  /* === INTERACTIVE COLORS === */
+  /* 호버 상태 배경 */
+  --color-hover-bg: var(--colors-neutral-neutral-04);
+  /* 액센트 색상 (버튼, 링크 등) */
+  --color-accent: var(--colors-wafer-blue-wafer-blue-09);
+  --color-accent-hover: var(--colors-wafer-blue-wafer-blue-12);
+  --color-accent-light: var(--colors-wafer-blue-wafer-blue-02);
+
+  /* === BORDER COLORS === */
+  --color-border-light: var(--colors-neutral-neutral-07);
+  --color-border-medium: var(--colors-neutral-neutral-09);
+
+  /* === COMPONENT SPECIFIC COLORS === */
+
+  /* === FOCUS & OUTLINE === */
+  --focus-outline: 1px solid var(--color-text-on-button-on-2ndary-activated-activated-hover);
+  --focus-outline-offset: 2px;
+
+  /* === SPACING SYSTEM === */
+  --spacing-scale: 14; /* for 14px base font size */
+  --spacing-factor: calc(14 / var(--spacing-scale));
+  --spacing-base: 4px;
+
+  /* Primitive spacing (픽셀 기반 정확한 값) */
+  --spacing-0: 0px;
+  --spacing-2px: 2px;
+  --spacing-4px: 4px;
+  --spacing-5px: 5px;
+  --spacing-6px: 6px;
+  --spacing-8px: 8px;
+  --spacing-12px: 12px;
+  --spacing-16px: 16px;
+  --spacing-20px: 20px;
+  --spacing-24px: 24px;
+  --spacing-28px: 28px;
+  --spacing-32px: 32px;
+  --spacing-36px: 36px;
+  --spacing-40px: 40px;
+
+  /* Semantic spacing (Compact density - 기존 가이드 기준) */
+  --spacing-sm: calc(0.25rem * var(--spacing-factor)); /* 4px */
+  --spacing-md: calc(0.5rem * var(--spacing-factor)); /* 8px */
+  --spacing-lg: calc(1rem * var(--spacing-factor)); /* 16px */
+  --spacing-xl: calc(1.5rem * var(--spacing-factor)); /* 24px - TBD */
+  --spacing-2xl: calc(2rem * var(--spacing-factor)); /* 32px - TBD */
+  --spacing-3xl: calc(2.5rem * var(--spacing-factor)); /* 40px - TBD */
+
+  /* Base scale spacing (4px 기준 스케일) */
+  --spacing-1/2: calc(var(--spacing-base) / 2); /* 2px */
+  --spacing-1: calc(1 * var(--spacing-base)); /* 4px */
+  --spacing-2: calc(2 * var(--spacing-base)); /* 8px */
+  --spacing-3: calc(3 * var(--spacing-base)); /* 12px */
+  --spacing-4: calc(4 * var(--spacing-base)); /* 16px */
+  --spacing-5: calc(5 * var(--spacing-base)); /* 20px */
+  --spacing-6: calc(6 * var(--spacing-base)); /* 24px */
+  --spacing-7: calc(7 * var(--spacing-base)); /* 28px */
+
+  /* Extended spacing (rem 기준, 스케일링 적용) */
+  --spacing-xs: calc(0.125rem * var(--spacing-factor));
+  --spacing-2xl-alt: calc(1.5rem * var(--spacing-factor));
+  --spacing-3xl-alt: calc(2rem * var(--spacing-factor));
+
+  /* Large scale spacing (sz 시리즈) */
+  --spacing-sz-0: 0rem;
+  --spacing-sz-1: calc(0.0625rem * var(--spacing-factor));
+  --spacing-sz-2: calc(0.125rem * var(--spacing-factor));
+  --spacing-sz-4: calc(0.25rem * var(--spacing-factor));
+  --spacing-sz-6: calc(0.375rem * var(--spacing-factor));
+  --spacing-sz-8: calc(0.5rem * var(--spacing-factor));
+  --spacing-sz-10: calc(0.625rem * var(--spacing-factor));
+  --spacing-sz-12: calc(0.75rem * var(--spacing-factor));
+  --spacing-sz-14: calc(0.875rem * var(--spacing-factor));
+  --spacing-sz-16: calc(1rem * var(--spacing-factor));
+  --spacing-sz-20: calc(1.25rem * var(--spacing-factor));
+  --spacing-sz-24: calc(1.5rem * var(--spacing-factor));
+  --spacing-sz-28: calc(1.75rem * var(--spacing-factor));
+  --spacing-sz-32: calc(2rem * var(--spacing-factor));
+  --spacing-sz-36: calc(2.25rem * var(--spacing-factor));
+  --spacing-sz-40: calc(2.5rem * var(--spacing-factor));
+  --spacing-sz-44: calc(2.75rem * var(--spacing-factor));
+  --spacing-sz-48: calc(3rem * var(--spacing-factor));
+  --spacing-sz-56: calc(3.5rem * var(--spacing-factor));
+  --spacing-sz-64: calc(4rem * var(--spacing-factor));
+  --spacing-sz-80: calc(5rem * var(--spacing-factor));
+  --spacing-sz-96: calc(6rem * var(--spacing-factor));
+  --spacing-sz-112: calc(7rem * var(--spacing-factor));
+  --spacing-sz-128: calc(8rem * var(--spacing-factor));
+  --spacing-sz-144: calc(9rem * var(--spacing-factor));
+  --spacing-sz-160: calc(10rem * var(--spacing-factor));
+  --spacing-sz-176: calc(11rem * var(--spacing-factor));
+  --spacing-sz-192: calc(12rem * var(--spacing-factor));
+  --spacing-sz-208: calc(13rem * var(--spacing-factor));
+  --spacing-sz-224: calc(14rem * var(--spacing-factor));
+  --spacing-sz-240: calc(15rem * var(--spacing-factor));
+  --spacing-sz-256: calc(16rem * var(--spacing-factor));
+  --spacing-sz-288: calc(18rem * var(--spacing-factor));
+  --spacing-sz-320: calc(20rem * var(--spacing-factor));
+  --spacing-sz-384: calc(24rem * var(--spacing-factor));
+  --spacing-sz-400: calc(25rem * var(--spacing-factor));
+  --spacing-sz-416: calc(26rem * var(--spacing-factor));
+  --spacing-sz-432: calc(27rem * var(--spacing-factor));
+  --spacing-sz-448: calc(28rem * var(--spacing-factor));
+  --spacing-sz-464: calc(29rem * var(--spacing-factor));
+  --spacing-sz-480: calc(30rem * var(--spacing-factor));
+  --spacing-sz-512: calc(32rem * var(--spacing-factor));
+  --spacing-sz-544: calc(34rem * var(--spacing-factor));
+  --spacing-sz-576: calc(36rem * var(--spacing-factor));
+  --spacing-sz-608: calc(39rem * var(--spacing-factor));
+  --spacing-sz-640: calc(40rem * var(--spacing-factor));
+  --spacing-sz-672: calc(42rem * var(--spacing-factor));
+  --spacing-sz-704: calc(44rem * var(--spacing-factor));
+  --spacing-sz-736: calc(46rem * var(--spacing-factor));
+  --spacing-sz-768: calc(48rem * var(--spacing-factor));
+  --spacing-sz-800: calc(50rem * var(--spacing-factor));
+  --spacing-sz-832: calc(52rem * var(--spacing-factor));
+  --spacing-sz-864: calc(54rem * var(--spacing-factor));
+
+  /* === BORDER SYSTEM === */
+  --border-width-0: 0px;
+  --border-width-sm: 1px;
+  --border-width-md: 2px;
+  --border-width-lg: 4px;
+  --border-width-accent: 4px; /* Semantic accent border */
+
+  /* === RADIUS SYSTEM === */
+  --radius-0: 0px;
+  --radius-xs: calc(0.125rem * var(--spacing-factor));
+  --radius-sm: calc(0.25rem * var(--spacing-factor));
+  --radius-md: calc(0.5rem * var(--spacing-factor));
+  --radius-lg: calc(1rem * var(--spacing-factor));
+  --radius-xl: calc(1.5rem * var(--spacing-factor));
+  --radius-full: 9999px;
+
+  /* === SHADOW SYSTEM === */
+  --shadow-sm: var(--shadow-1);
+  --shadow-md: var(--shadow-2);
+  --shadow-lg: var(--shadow-3);
+  --shadow-xl: var(--shadow-4);
+  --shadow-2xl: var(--shadow-5);
+  --shadow-none: none;
+
+  /* === OPACITY SYSTEM === */
+  --opacity-0: 0;
+  --opacity-none: 100%;
+  --opacity-dim-1: 72%;
+  --opacity-dim-2: 56%;
+  --opacity-dim-3: 40%;
+  --opacity-dim-4: 16%;
+  --opacity-dim-5: 8%;
+
+  /* === Z-INDEX SYSTEM === */
+  --z-index-hide: -1;
+  --z-index-base: 0;
+  --z-index-raised: 1;
+  --z-index-dropdown: 1000;
+  --z-index-overlay: 1300;
+  --z-index-modal: 1400;
+  --z-index-popover: 1500;
+  --z-index-toast: 1700;
+  --z-index-tooltip: 1800;
+}
+
+@layer base {
+  * {
+    letter-spacing: 0.8px;
+  }
+
+  *:focus {
+    outline: none;
+  }
+
+  *:focus-visible {
+    outline: none;
+  }
+}
+
+/* === CUSTOM UTILITIES === */
+
+/* Custom color utilities */
+@utility text-primary {
+  color: var(--color-text-primary);
+}
+
+@utility text-secondary {
+  color: var(--color-text-secondary);
+}
+
+@utility text-disabled {
+  color: var(--color-text-disabled);
+}
+
+@utility bg-scrollbar {
+  @apply bg-[var(--color-bg-scrollbar)];
+}
+
+@utility bg-scrollbar/hover {
+  @apply bg-[var(--color-bg-scrollbar)];
+}
+
+/* Custom border utilities (box-shadow based) - these cannot be auto-generated */
+@utility border-light {
+  box-shadow: inset 0 0 0 1px var(--color-border-light);
+}
+
+@utility border-medium {
+  box-shadow: inset 0 0 0 1px var(--color-border-medium);
+}
+
+/* Custom semantic border utilities for specific colors */
+@utility border-success {
+  box-shadow: inset 0 0 0 1px var(--color-success);
+}
+
+@utility border-error {
+  box-shadow: inset 0 0 0 1px var(--color-danger);
+}
+
+@utility border-warning {
+  box-shadow: inset 0 0 0 1px var(--color-warning);
+}
+
+@utility border-info {
+  box-shadow: inset 0 0 0 1px var(--color-brand);
+}
+
+@utility border-tag {
+  box-shadow: inset 0 0 0 1px var(--colors-neutral-neutral-07);
+}
+
+@utility border-tag-hover {
+  box-shadow: inset 0 0 0 1px var(--colors-neutral-neutral-09);
+}
+
+@utility border-close-hover {
+  box-shadow: inset 0 0 0 1px var(--color-border-on-item-list-datatable-hover);
+}
+
+/* Custom outline utilities */
+@utility outline-ring-none {
+  outline-offset: 1px;
+  outline: 1px solid transparent;
+}
+
+@utility outline-ring {
+  position: relative;
+  z-index: 50;
+  outline: var(--focus-outline, 1px solid var(--color-text-on-button-on-2ndary-activated-activated-hover));
+  outline-offset: var(--focus-outline-offset, 1px);
+}
+
+@utility outline-ring-0 {
+  position: relative;
+  z-index: 50;
+  outline: var(--focus-outline, 1px solid var(--color-text-on-button-on-2ndary-activated-activated-hover));
+  outline-offset: 0px;
+}
+
+@utility outline-ring-inner {
+  position: relative;
+  z-index: 50;
+  outline: var(--focus-outline, 1px solid var(--color-text-on-button-on-2ndary-activated-activated-hover));
+  outline-offset: -1px;
+}
+
+
+/* Custom elevation utilities */
+@utility elevation-modal {
+  @apply z-modal shadow-md;
+}
+
+@utility elevation-tooltip {
+  @apply z-tooltip shadow-sm;
+}
+
+@utility elevation-dropdown {
+  @apply z-dropdown shadow-md;
+}
+
+@utility elevation-header {
+  @apply z-raised shadow-sm;
+}
+
+@custom-variant hocus (&:hover, &:focus);

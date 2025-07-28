@@ -1,0 +1,33 @@
+import { Unstyled, Meta } from '@storybook/addon-docs/blocks';
+
+import { TypoPreview } from "@/stories/views"
+
+<Meta title="Primitives/Typography (서체)" />
+
+# Primitive / Typography (서체)
+
+export const fontSizes = [
+  "# SOK - Samsung One Korean NoF",
+  "typo-sok-h1-44-700",
+  "typo-sok-h2-32-700",
+  "typo-sok-h3-24-700",
+  "typo-sok-h4-20-700",
+  "typo-sok-h5-16-700",
+  "typo-sok-h6-14-700",
+  "typo-sok-h7-12-700",
+  "typo-sok-body-14-400",
+  "typo-sok-caption-12-400",
+  "typo-sok-footnote-11-400",
+  "---",
+  "# SSS - Samsung Sharp Sans",
+  "typo-sss-h1-40-700",
+  "typo-sss-h2-28-700",
+  "typo-sss-h3-22-700",
+  "typo-sss-h4-19-700",
+  "typo-sss-h5-13-700",
+];
+
+<Unstyled>
+  <TypoPreview typoNames={fontSizes} />
+</Unstyled>
+

@@ -1,0 +1,31 @@
+@utility outline-ring-1 {
+  outline: 1px solid var(--color-text-on-button-on-2ndary-activated-activated-hover);
+  outline-offset: 1px;
+}
+
+@utility outline-ring-2 {
+  outline: 1px solid var(--color-text-on-button-on-2ndary-activated-activated-hover);
+  outline-offset: 2px;
+}
+
+@utility outline-ring-3 {
+  outline: 1px solid var(--color-text-on-button-on-2ndary-activated-activated-hover);
+  outline-offset: 3px;
+}
+
+@utility outline-ring-4 {
+  outline: 2px solid var(--color-text-on-button-on-2ndary-activated-activated-hover);
+  outline-offset: 2px;
+}
+
+.demo-app {
+  [role=tabpanel]>.docblock-source {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+
+  .prismjs {
+    padding: 16px !important;
+    max-height: calc(100vh - 160px) !important;
+  }
+}

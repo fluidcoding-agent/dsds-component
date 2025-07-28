@@ -1,0 +1,40 @@
+@import "./button.css";
+
+/* Reset Vuetify button defaults and apply DSDS tokens */
+button.v-btn {
+  /* Reset default styles */
+  text-transform: initial;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  line-height: 1.25;
+  display: flex;
+  flex-direction: row;
+
+  /* Apply base button styles */
+  @apply font-sans rounded-xs transition-none;
+  @apply gap-button-default;
+
+  /* Remove default Vuetify overlays */
+  & > .v-btn__overlay {
+    display: none !important;
+  }
+
+  /* Reset default focus styles */
+  &:focus-visible {
+    /* @apply btn-focus; */
+    box-shadow: none !important;
+
+    &::after {
+      display: none !important;
+    }
+  }
+
+  /* Disabled state */
+  &:disabled {
+    /* @apply btn-disabled; */
+  }
+}
+
+/* Variant-specific styles are now applied via classes in VBtn.vue */
+/* Size-specific styles are now applied via classes in VBtn.vue */
+/* All token values are imported from button-tokens.css */

@@ -1,0 +1,37 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { getComputedCssVariable } from "@docs/helpers"
+
+<Meta title="Primitives/Spacing (간격)" />
+
+# Primitive / Spacing (간격)
+
+export const spacing = [
+    {computed: "p-0", className: "size-0"},
+    {computed: "p-2px", className: "size-2px"},
+    {computed: "p-4px", className: "size-4px"},
+    {computed: "p-5px", className: "size-5px"},
+    {computed: "p-6px", className: "size-6px"},
+    {computed: "p-8px", className: "size-8px"},
+    {computed: "p-12px", className: "size-12px"},
+    {computed: "p-16px", className: "size-16px"},
+    {computed: "p-20px", className: "size-20px"},
+    {computed: "p-24px", className: "size-24px"},
+    {computed: "p-28px", className: "size-28px"},
+    {computed: "p-32px", className: "size-32px"},
+    {computed: "p-36px", className: "size-36px"},
+    {computed: "p-40px", className: "size-40px"},
+]
+
+<div className="sb-unstyled flex flex-col gap-xl">
+    {spacing.map(({ computed, className, comment }) => {
+        return (
+            <div className="gap-lg flex items-center">
+                <div className={`${className} bg-brand`} />
+                <div className="flex flex-col">
+                    <p className="font-mono font-bold text-body">{computed} {comment && <span className="opacity-dim-1">({comment})</span>}</p>
+                    <p className="typo-caption-mono opacity-dim-1">{getComputedCssVariable("padding", computed)}</p>
+                </div>
+            </div>
+        )
+    })}
+</div>

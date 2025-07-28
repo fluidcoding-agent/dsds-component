@@ -1,0 +1,102 @@
+import { Meta, Markdown } from '@storybook/addon-docs/blocks'
+import { Callout } from "@docs/helpers"
+
+<Meta title="사용하기/설치 방법" />
+
+# 설치 방법
+
+## 사전 준비
+
+- Node.js v20 이상을 설치하세요.
+- `pnpm` 을 설치하시면 더 쾌적하게 개발이 가능합니다.
+
+
+### `pnpm` 설치하기
+
+`npm`에 비해 [저장공간을 매우 적게 사용하며 성능이 5배 이상 빠른](https://pnpm.io/ko/motivation) `pnpm` 을 추천합니다.
+
+```
+npm install -g pnpm
+```
+
+<Callout kind="warning">
+  최신 Node 버전에서 `corepack` 을 이용하는 방법이 일반적이나, 사내에서 SSL 이슈로 잘 동작하지 않습니다.
+  따라서, `npm install -g ...` 를 이용한 방법을 추천합니다.
+</Callout>
+
+### `@dsds` 레포지터리 등록하기
+
+다음 명령을 실행해서 `@dsds` 레지스트리를 추가해주세요.
+
+```
+npm config set @dsds:registry registry=https://npm.mwebdev.samsungds.net/
+npm config set noproxy repo.samsungds.net,artifact.samsungds.net,npm.mwebdev.samsungds.net
+```
+
+## 패키지 설치 및 셋업하기
+
+<Callout kind="info">
+  <p>다음과 같이 훨씬 쉽게 프로젝트 셋업하는 CLI 도구를 개발중입니다. </p>
+  ```
+  pnpm create @dsds/react my-app
+  ```
+  <p>7월 중에 공개될 예정입니다. 😊 당분간은 아래 가이드를 따라주세요.</p>
+</Callout>
+
+
+### React 프로젝트 셋업하기
+
+**1. `vite`로 프로젝트 생성하기**
+
+```bash
+pnpm create vite --template=react-ts my-app
+cd my-app
+pnpm install
+```
+
+**2. `@dsds/react-radix-ui` 및 `@dsds/fonts` 패키치 설치하기**
+
+```bash
+pnpm add @dsds/react-radix-ui @dsds/fonts
+```
+
+**3. tailwincsss 설치하기**
+
+[tailwindcss 공식가이드](https://tailwindcss.com/docs/installation/using-vite)를 참고하여 tailwindcss를 셋업합니다.
+
+**4. `src/index.css` 수정하기**
+
+기존 내용을 전부 삭제 후 다음 코드를 추가합니다.
+
+```css
+@import "@dsds/fonts";
+@import "@dsds/react-radix-ui/styles.css";
+```
+
+**5. `App.tsx` 에 컴포넌트 임포트 하기**
+
+`App.tsx` 내용을 다음과 같이 수정해봅니다.
+
+```tsx
+import { useState } from 'react'
+import { Button } from "@dsds/react-radix-ui"
+
+function App() {
+  const [count, setCount] = useState(0)
+
+  return (
+      <div className="flex flex-col justify-center items-center h-full w-full p-100">
+        <Button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </Button>
+      </div>
+  )
+}
+
+export default App
+```
+
+**6. 실행 화면**
+
+![](/images/screenshots/20250612-dsds-demo-app.gif)
+

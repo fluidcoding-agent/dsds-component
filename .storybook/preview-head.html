@@ -1,0 +1,151 @@
+<script>
+  window.global = window
+</script>
+
+<style>
+  html {
+    scrollbar-width: thin;
+    letter-spacing: 0.8px;
+  }
+
+  :root {
+    --font-sans: "Malgun Gothic", "SamsungOneKoreanNoF", ui-sans-serif, system-ui, sans-serif;
+    --font-heading: "Samsung Sharp Sans", "Malgun Gothic", "Pretendard", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: D2Coding, Consolas, "Courier New", ui-monospace, monospace;
+    --default-font-family: "Malgun Gothic", var(--font-sans);
+  }
+
+  /*   :where(p:not(.sb-anchor, .sb-unstyled, .sb-unstyled p)),
+  :where(li:not(.sb-anchor, .sb-unstyled, .sb-unstyled li)) {
+    font-size: max(1em, 14px) !important;
+  }
+*/
+
+  body.sb-show-main {
+    background-color: #ffffff !important;
+    height: 100vh;
+
+    &.bg-black {
+      background-color: #121212 !important;
+    }
+
+    .v-application__wrap {
+      min-height: calc(100vh - 60px);
+    }
+  }
+
+  body.sb-show-main.sb-main-padded {
+    padding: 0px 0px;
+  }
+
+
+  @layer base {
+    div.sbdocs.sbdocs-wrapper>* {
+      letter-spacing: normal;
+      font-size: 14px;
+    }
+  }
+
+
+  div.sbdocs.sbdocs-wrapper {
+    padding: 25px;
+    justify-content: start;
+
+    .docblock-source {
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+
+    pre.prismjs {
+      padding: 10px 10px;
+    }
+
+    h1 {
+      font-size: var(--text-2xl);
+      border-bottom: 2px solid var(--colors-neutral-neutral-08);
+      margin-bottom: 1rem;
+    }
+
+    .sbdocs-preview {
+      margin-top: 0px;
+      margin-bottom: 10px;
+    }
+
+    /* .sb-unstyled 내부에 있지 않은 h1~h5 요소들에만 Storybook 스타일 적용 */
+    h1:not(.sb-unstyled h1):not(.sb-unstyled * h1),
+    h2:not(.sb-unstyled h2):not(.sb-unstyled * h2),
+    h3:not(.sb-unstyled h3):not(.sb-unstyled * h3),
+    h4:not(.sb-unstyled h4):not(.sb-unstyled * h4),
+    h5:not(.sb-unstyled h5):not(.sb-unstyled * h5) {
+      font-family: var(--font-heading);
+      font-weight: bold;
+      letter-spacing: 0px;
+      color: var(--colors-neutral-neutral-17);
+    }
+
+    h2:not(.sb-unstyled h2):not(.sb-unstyled * h2) {
+      font-size: var(--text-xl);
+      width: 100%;
+      border-bottom: 1px solid rgba(38, 85, 115, 0.15);
+      padding-bottom: 4px;
+      margin-bottom: 15px;
+      margin-top: 20px;
+    }
+
+    h3:not(.sb-unstyled h3):not(.sb-unstyled * h3) {
+      font-size: var(--text-lg);
+    }
+
+    h4:not(.sb-unstyled h4):not(.sb-unstyled * h4) {
+      font-size: var(--text-md)
+    }
+
+    /* div.sb-anchor>h3 다음에 오는 p 는 margin-top 제거 */
+    div.sb-anchor>h3:not(.sb-unstyled h3):not(.sb-unstyled * h3)+p {
+      margin-top: 0;
+    }
+
+    /* h2 바로 다음에 오는 첫 번째 div.sb-anchor */
+    h2:not(.sb-unstyled h2):not(.sb-unstyled * h2)+div.sb-anchor {
+      margin-top: 0;
+    }
+
+    /* 그 외의 div.sb-anchor (처음이 아닌 경우) */
+    div.sb-anchor {
+      margin-top: 20px;
+    }
+
+    div.sb-anchor>h3:not(.sb-unstyled h3):not(.sb-unstyled * h3):first-child {
+      margin-bottom: 5px;
+    }
+
+    .v-application__wrap {
+      min-height: initial !important;
+    }
+
+    .v-layout--full-height {
+      height: initial !important;
+    }
+  }
+
+  #storybook-root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: initial !important;
+    padding: 0px 0px;
+
+    &.bg-white {
+      .v-application.v-theme--light {
+        background: transparent !important;
+      }
+    }
+
+    &.bg-black {
+      .v-application.v-theme--dark {
+        background: transparent !important;
+      }
+    }
+  }
+</style>

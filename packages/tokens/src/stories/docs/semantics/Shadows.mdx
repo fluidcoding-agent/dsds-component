@@ -1,0 +1,27 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { getComputedCssVariable } from "@docs/helpers"
+
+<Meta title="Semantics/Shadows (그림자)" />
+
+# Semantic / Shadows (그림자)
+
+export const spacing = [
+    {computed: "shadow-sm", className: "shadow-sm"},
+    {computed: "shadow-md", className: "shadow-md"},
+    {computed: "shadow-lg", className: "shadow-lg"},
+]
+
+<div className="sb-unstyled pt-2xl flex flex-col gap-2xl items-center">
+    {spacing.map(({ computed, className, comment }) => {
+        return (
+          <div className={`p-lg gap-lg flex justify-start items-center w-80 h-20 bg-brand rounded-sm ${className}`}>
+                <div className="flex flex-col gap-sm">
+                    <p className="font-mono font-bold text-white">{computed} {comment && <span className="opacity-dim-1">({comment})</span>}</p>
+                    <p className="typo-caption-mono text-white opacity-dim-1">
+                        {getComputedCssVariable("box-shadow", className).split("rgba").filter(it => it).reduce((acc, it) => [...acc, <p>rgba{it}</p>], [])}
+                    </p>
+                </div>
+            </div>
+        )
+    })}
+</div>

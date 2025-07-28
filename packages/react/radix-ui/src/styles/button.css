@@ -1,0 +1,156 @@
+@import "./variables";
+
+@theme inline {
+  /* buttons */
+  --gap-button-default: var(--spacing-button-gap-default);
+
+  --color-button-primary-bg: var(--color-bg-on-button-brand-default);
+  --color-button-primary-text: var(--color-text-on-button-on-brand);
+  --color-button-primary-text-disabled: var(--color-text-on-button-on-brand-disabled);
+  --color-button-primary-bg-hover: var(--color-bg-on-button-brand-hover);
+  --color-button-primary-bg-disabled: var(--color-bg-on-button-brand-disabled);
+
+  --color-button-2nd-bg: var(--color-bg-on-button-secondary-default);
+  --color-button-2nd-bg-disabled: var(--color-bg-on-button-secondary-disabled);
+  --color-button-2nd-bg-selected: var(--color-bg-on-button-secondary-selected);
+  --color-button-2nd-text: var(--color-text-on-button-on-2ndary);
+  --color-button-2nd-text-disabled: var(--color-text-on-button-on-2ndary-disabled);
+  --color-button-2nd-text-active: var(--color-text-on-button-on-2ndary-activated-activated-hover);
+  --color-button-2nd-text-selected: var(--color-text-on-button-on-2ndary-activated-activated-hover);
+  --color-button-2nd-border: var(--color-border-btn-2ndary-border-default);
+  --color-button-2nd-border-hover: var(--color-border-btn-2ndary-border-hover);
+  --color-button-2nd-border-active: var(--color-border-border-activated-brand);
+
+  --color-button-warning-bg: var(--color-bg-on-button-warning-default);
+  --color-button-warning-text: var(--color-text-on-button-on-warning);
+  --color-button-warning-text-disabled: var(--color-text-on-button-on-warning-disabled);
+  --color-button-warning-bg-hover: var(--color-bg-on-button-warning-hover);
+  --color-button-warning-bg-disabled: var(--color-bg-on-button-warning-disabled);
+
+  --color-button-danger-bg: var(--color-bg-on-button-danger-default);
+  --color-button-danger-text: var(--color-text-on-button-on-danger);
+  --color-button-danger-text-disabled: var(--color-text-on-button-on-danger-disabled);
+  --color-button-danger-bg-hover: var(--color-bg-on-button-danger-hover);
+  --color-button-danger-bg-disabled: var(--color-bg-on-button-danger-disabled);
+
+  --color-button-ghost-bg: var(--color-bg-on-ghost-button-ghostbtn-default);
+  --color-button-ghost-bg-hover: var(--color-bg-on-ghost-button-ghostbtn-hover);
+  --color-button-ghost-bg-activated: var(--color-bg-on-ghost-button-ghostbtn-activated);
+  --color-button-ghost-bg-disabled: var(--color-bg-on-ghost-button-ghostbtn-default);
+  --color-button-ghost-bg-selected: var(--color-bg-on-ghost-button-ghostbtn-selected);
+  --color-button-ghost-text: var(--color-text-on-btn-ghost-on-ghost-default);
+  --color-button-ghost-text-disabled: var(--color-text-on-btn-ghost-on-ghost-disabled);
+  --color-button-ghost-text-active: var(--color-text-on-btn-ghost-on-ghost-active);
+  --color-button-ghost-text-selected: var(--color-text-on-btn-ghost-on-ghost-selected);
+
+  --color-button-ghost-link-bg: var(--color-bg-on-ghost-button-ghostbtn-default);
+  --color-button-ghost-link-bg-disabled: var(--color-bg-on-ghost-button-ghostbtn-default);
+  --color-button-ghost-link-bg-hover: var(--color-bg-on-ghost-button-ghostbtn-hover);
+  --color-button-ghost-link-text: var(--color-text-on-btn-ghost-link-on-ghost-link-default);
+  --color-button-ghost-link-text-disabled: var(--color-text-on-btn-ghost-link-on-ghost-link-disabled);
+}
+
+@utility border-button-2nd {
+  box-shadow: inset 0 0 0 1px var(--color-border-btn-2ndary-border-default);
+}
+
+@utility border-button-2nd-hover {
+  box-shadow: inset 0 0 0 1px var(--color-border-btn-2ndary-border-hover);
+}
+
+@utility border-button-active-hover {
+  box-shadow: inset 0 0 0 1px var(--color-border-border-focused-activated-hover);
+}
+
+@utility border-button-active {
+  box-shadow: inset 0 0 0 1px var(--color-border-border-activated-brand);
+}
+
+@utility border-button-selected {
+  box-shadow: inset 0 0 0 1px var(--color-border-selected-populated);
+}
+
+@utility border-button-ghost-active {
+  box-shadow: inset 0 0 0 1px var(--color-border-active);
+}
+
+@utility border-button-ghost-active-hover {
+  box-shadow: inset 0 0 0 1px var(--color-border-border-focused-activated-hover);
+}
+
+@utility btn-small {
+  @apply min-w-[var(--spacing-button-min-w-small)] px-[var(--spacing-button-px-small)] py-[var(--spacing-button-py-small)];
+}
+
+@utility btn-medium {
+  @apply min-w-[var(--spacing-button-min-w-medium)] px-[var(--spacing-button-px-medium)] py-[var(--spacing-button-py-medium)];
+}
+
+@utility btn-large {
+  @apply min-w-[var(--spacing-button-min-w-large)] px-[var(--spacing-button-px-large)] py-[var(--spacing-button-py-large)];
+}
+
+@utility btn-icon-small {
+  @apply p-[var(--spacing-button-p-icon-small)];
+}
+
+@utility btn-icon-medium {
+  @apply p-[var(--spacing-button-p-icon-medium)];
+}
+
+@utility btn-icon-large {
+  @apply p-[var(--spacing-button-p-icon-large)];
+}
+
+/**
+ *  ButtonsDemo 디버깅용
+ */
+.hover\:bg-button-primary-bg-hover.hovered {
+  @apply bg-button-primary-bg-hover;
+}
+
+.hover\:bg-button-danger-bg-hover.hovered {
+  @apply bg-button-danger-bg-hover;
+}
+
+.hover\:bg-button-warning-bg-hover.hovered {
+  @apply bg-button-warning-bg-hover;
+}
+
+.hover\:border-button-2nd-hover.hovered {
+  @apply border-button-2nd-hover;
+}
+
+.hover\:bg-button-ghost-bg-hover.hovered {
+  @apply bg-button-ghost-bg-hover;
+}
+
+.hover\:bg-button-ghost-link-bg-hover.hovered {
+  @apply bg-button-ghost-link-bg-hover;
+}
+
+/* focused */
+
+.focus-visible\:bg-button-primary-bg-hover.focused {
+  @apply bg-button-primary-bg-hover outline-ring;
+}
+
+.focus-visible\:bg-button-warning-bg-hover.focused {
+  @apply bg-button-warning-bg-hover outline-ring;
+}
+
+.focus-visible\:bg-button-danger-bg-hover.focused {
+  @apply bg-button-danger-bg-hover outline-ring;
+}
+
+.focus-visible\:data-\[active\=false\]\:border-button-2nd-hover.focused {
+  @apply data-[active=true]:border-button-active-hover data-[active=false]:border-button-2nd-hover outline-ring;
+}
+
+.focus-visible\:data-\[active\=false\]\:bg-button-ghost-bg-hover.focused {
+  @apply data-[active=false]:bg-button-ghost-bg-hover outline-ring;
+}
+
+.focus-visible\:bg-button-ghost-link-bg-hover.focused {
+  @apply bg-button-ghost-bg-hover outline-ring;
+}

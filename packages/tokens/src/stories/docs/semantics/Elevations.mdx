@@ -1,0 +1,57 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+import { getComputedCssVariable } from "@docs/helpers"
+
+<Meta title="Semantics/Elevations (높이)" />
+
+# Semantic / Elevations (높이)
+
+export const zIndexes = [
+    {computed: "z-base", className: "shadow-sm bg-[var(--colors-oxygen-red-o-red-01)]"},
+    {computed: "z-raised", className: "shadow-md bg-[var(--colors-oxygen-red-o-red-02)]"},
+    {computed: "z-dropdown", className: "shadow-md bg-[var(--colors-oxygen-red-o-red-03)]"},
+    {computed: "z-sticky", className: "shadow-md bg-[var(--colors-oxygen-red-o-red-04)]"},
+    {computed: "z-overlay", className: "shadow-md bg-[var(--colors-oxygen-red-o-red-05)]"},
+    {computed: "z-modal", className: "shadow-md bg-[var(--colors-oxygen-red-o-red-06)]"},
+    {computed: "z-popover", className: "shadow-md bg-[var(--colors-oxygen-red-o-red-07)] text-white"},
+    {computed: "z-toast", className: "shadow-sm bg-[var(--colors-oxygen-red-o-red-08)] text-white"},
+    {computed: "z-tooltip", className: "shadow-sm bg-[var(--colors-oxygen-red-o-red-09)] text-white"},
+]
+
+## Z-Index
+
+<div className="sb-unstyled">
+    <div className="relative h-80">
+      {zIndexes.map(({ computed, className, comment }, index) => {
+          return (
+            <div key={index}  style={{marginLeft: 20 * index, marginTop: 30 * index, zIndex: 100 * index}} className={`absolute flex py-sm px-lg gap-lg flex justify-start items-start w-40 h-20 rounded-sm ${className}`}>
+                <div class="flex items-center gap-md">
+                  <p className="font-mono font-bold">{computed}: {comment && <span className="opacity-dim-1">({comment})</span>}</p>
+                  <p className="typo-caption-mono opacity-dim-1">{getComputedCssVariable("z-index", computed)}</p>
+                </div>
+            </div>
+          )
+      })}
+    </div>
+</div>
+
+## Elevations
+
+export const elevations = [
+    {computed: "elevation-dropdown", className: "elevation-dropdown bg-[var(--colors-wafer-blue-wafer-blue-03)]"},
+    {computed: "elevation-modal", className: "elevation-modal bg-[var(--colors-wafer-blue-wafer-blue-04)]"},
+    {computed: "elevation-tooltip", className: "elevation-tooltip bg-[var(--colors-wafer-blue-wafer-blue-05)]"},
+]
+
+<div className="sb-unstyled">
+    <div class="relative h-30">
+      {elevations.map(({ computed, className, comment }, index) => {
+          const postfix = computed.split("-").at(-1)
+          return (
+            <div key={index} style={{marginLeft: 30 * index, marginTop: 60 * index, zIndex: 100 * index}} className={`absolute flex flex-col py-sm px-lg gap-sm flex justify-start items-start w-50 h-20 rounded-sm ${className}`}>
+                  <p className="font-mono font-bold">{computed} {comment && [":", <span className="opacity-dim-1">({comment})</span>]}</p>
+                <p className="typo-caption-mono text-xs opacity-dim-1">shadow-{postfix} z-{postfix}</p>
+            </div>
+          )
+      })}
+    </div>
+</div>

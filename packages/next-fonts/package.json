@@ -1,0 +1,46 @@
+{
+  "name": "@dsds/next-fonts",
+  "version": "0.1.0",
+  "author": "김용기, 조무영 <dsds.srv@samsung.com>",
+  "description": "DS 디자인 시스템 - Next.js 용 로컬 폰트",
+  "type": "module",
+  "main": "src/index.mjs",
+  "module": "dist/index.mjs",
+  "files": [
+    "README.md",
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "@dsds/fonts": "workspace:^",
+    "next": "^15"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.0",
+    "@tailwindcss/vite": "^4.1.8",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^4.4.1",
+    "eslint": "^9.28.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.1",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3",
+    "react": "^19",
+    "react-dom": "^19",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.30.1",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4",
+    "vite-plugin-static-copy": "^3.0.2"
+  }
+}

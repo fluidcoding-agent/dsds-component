@@ -1,0 +1,13 @@
+{
+  "extends": "../../../tsconfig.base.json", // 1. 루트의 기본 설정 상속
+  "compilerOptions": {
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "baseUrl": ".",
+    "rootDir": ".",
+    "composite": true,
+    "noEmit": false,
+    "allowImportingTsExtensions": false
+  },
+  "include": ["src", "e2e"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

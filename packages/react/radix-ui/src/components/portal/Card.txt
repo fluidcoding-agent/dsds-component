@@ -1,0 +1,30 @@
+import { Button } from "@/components/ui"
+
+type Props = {
+  title: string
+  description?: string
+}
+
+export function Card({ title, description }: Props) {
+  return (
+    <div className="content-item ml mr-5 mb-5 h-[114px] w-[245px] rounded-sm bg-white p-5 pl-[18px] shadow-sm hover:shadow-lg">
+      <div className="content-item flex">
+        <div className="icon mr-3 h-9 max-h-9 min-h-9 w-9 max-w-9 min-w-9 rounded-xs border-1 border-orange-300 bg-orange-100"></div>
+        <div className="text relative inline-block text-[14px]">
+          <p className="title relative mb-[2px] w-[153px] truncate pr-5 leading-[20px] font-bold">
+            {title}
+            <span className="favorite absolute top-0 right-0 w-4">
+              <button type="button" className="ico-star"></button>
+            </span>
+          </p>
+          <p className="desc text-el w-[157px] truncate text-[12px] leading-[14px]">{description}</p>
+        </div>
+      </div>
+      <div className="content-item-footer mt-4">
+        <Button variant="secondary" className="w-full">
+          바로가기
+        </Button>
+      </div>
+    </div>
+  )
+}

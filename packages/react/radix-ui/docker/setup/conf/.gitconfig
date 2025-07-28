@@ -1,0 +1,42 @@
+[user]
+	name = 
+	email = 
+
+[credential]
+    helper = store --file ~/.my-credentials
+
+[http "https://github.samsungds.net"]
+	proxy = 
+
+[http "http://gitlab.adpaas.cloud.samsungds.net/"]
+    proxy =
+
+[http "https://dev.azure.com"]
+	proxy = http://12.26.204.100:8080
+
+[http "https://huggingface.co"]
+	proxy = http://12.26.204.100:8080
+
+[http "https://github.com"]
+	proxy = http://12.26.204.100:8080
+
+[http "https://gitlab.com"]
+	proxy = http://12.26.204.100:8080
+
+[http]
+	postBuffer = 1048576000
+	sslVerify = false
+	
+[core]
+	quotePath = false
+	commitGraph = true
+	longpaths = true
+	
+[receive]
+	advertisePushOptions = true
+	
+[gc]
+	writeCommitGraph = true
+
+[url "https://"]
+	insteadOf = git://

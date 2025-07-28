@@ -1,0 +1,6 @@
+@import "./variables";
+
+@theme inline {
+  --color-popover: var(--color-bg-surface-primary);
+  --color-popover-foreground: var(--colors-neutral-neutral-17);
+}

@@ -1,0 +1,155 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title="기여하기/개발 가이드/프로젝트 구조" />
+
+# 프로젝트 구조
+
+이 문서는 DSDS Monorepo의 구조를 설명합니다. 이 프로젝트는 `pnpm`을 사용하여 관리되는 모노레포입니다.
+
+## 주요 구성 요소
+
+### 루트 디렉토리
+
+- `README.md`: 프로젝트에 대한 기본 정보를 제공합니다.
+- `package.json`: 프로젝트의 메타데이터 및 스크립트를 정의합니다.
+- `pnpm-workspace.yaml`: `pnpm` 워크스페이스를 구성합니다.
+
+### 주요 디렉토리
+
+- `design/`: 디자인 관련 파일을 포함합니다.
+  - `tokens.json`: 디자인 토큰을 정의합니다.
+  - `generated/`: 디자인 토큰으로부터 생성된 CSS 및 토큰 파일을 포함합니다.
+- `packages/`: 재사용 가능한 패키지를 포함합니다.
+  - `tokens/`: `@dsds/tokens` 패키지를 포함하며, Storybook을 포함합니다.
+  - `react/`: React 관련 패키지를 포함합니다.
+    - `radix-ui/`: `@dsds/react-radix-ui` 패키지를 포함하며, Storybook을 포함합니다.
+  - `vue/`: Vue 관련 패키지를 포함합니다.
+    - `vuetify/`: `@dsds/vue-vuetify` 패키지를 포함하며, Storybook을 포함합니다.
+    - `radix-vue/`: `@dsds/vue-radix-vue` 패키지를 포함하며, 현재 TODO 상태입니다.
+- `apps/`: 애플리케이션을 포함합니다.
+  - `portal-app/`: 포탈 앱 프로젝트를 포함하며, Next.js를 사용합니다.
+- `storybooks/`: Storybook 관련 파일을 포함합니다.
+  - `pemrs/`: 현재 TODO 상태입니다.
+
+## pnpm 워크스페이스 구성
+
+`pnpm-workspace.yaml` 파일은 다음과 같이 구성되어 있습니다.
+
+```yaml
+packages:
+  - packages/*
+  - packages/vue/*
+  - packages/react/*
+  - apps/*
+
+ignoredBuiltDependencies:
+  - "@bundled-es-modules/glob"
+  - "@parcel/watcher"
+  - "@tailwindcss/oxide"
+  - esbuild
+  - sharp
+  - style-dictionary
+```
+
+이는 pnpm이 특정 디렉토리 내의 패키지를 워크스페이스로 인식하도록 합니다.
+
+## 주요 스크립트를
+
+`package.json` 파일에는 다음과 같은 주요 스크립트가 정의되어 있습니다.`
+
+```json
+"scripts": {
+  "dev:portal-app": "pnpm --filter @dsds/portal-app dev",
+  "watch:radix-ui": "pnpm --filter @dsds/react-radix-ui build -w",
+  "build": "pnpm --filter @dsds/* build",
+  "deploy-all": "pnpm --filter @dsds/* run deploy",
+  "build:themes": "node ./scripts/build_themes.js 2>&1 | grep '^Error:'",
+  "build:radix-ui": "pnpm --filter @dsds/react-radix-ui build",
+  "build:vuetify": "pnpm --filter @dsds/vue-vuetify build",
+  "storybook:tokens": "BROWSER=none STORYBOOK_BASE_URL= pnpm --filter @dsds/tokens storybook -p 6005",
+  "storybook:radix-ui": "BROWSER=none STORYBOOK_BASE_URL= pnpm --filter @dsds/react-radix-ui storybook dev -p 6006",
+  "storybook:vuetify": "BROWSER=none STORYBOOK_BASE_URL= pnpm --filter @dsds/vue-vuetify storybook -p 6007",
+  "start:portal-app": "pnpm --filter @dsds/portal-app start",
+  "test-vuetify": "pnpm --filter @dsds/vue-vuetify-storybook test",
+  "playwright-init": "pnpm --filter @dsds/vue-vuetify-storybook playwright-init"
+}
+```
+
+### package.json 스크립트 설명
+
+`package.json` 파일의 `scripts` 섹션에 정의된 각 스크립트의 기능은 다음과 같습니다.
+
+#### 1. 개발 관련 스크립트
+
+- **`dev:portal-app`**: `@dsds/portal-app` 패키지의 개발 서버를 실행합니다.
+  ```bash
+  pnpm --filter @dsds/portal-app dev
+  ```
+- **`watch:radix-ui`**: `@dsds/react-radix-ui` 패키지를 빌드하고 변경 사항을 감시합니다.
+  ```bash
+  pnpm --filter @dsds/react-radix-ui build -w
+  ```
+
+#### 2. 빌드 관련 스크립트
+
+- **`build`**: 모든 `@dsds/*` 패키지를 빌드합니다.
+  ```bash
+  pnpm --filter @dsds/* build
+  ```
+- **`build:themes`**: 테마를 빌드하며, 에러 메시지를 필터링합니다.
+  ```bash
+  node ./scripts/build_themes.js 2>&1 | grep '^Error:'
+  ```
+- **`build:radix-ui`**: `@dsds/react-radix-ui` 패키지를 빌드합니다.
+  ```bash
+  pnpm --filter @dsds/react-radix-ui build
+  ```
+- **`build:vuetify`**: `@dsds/vue-vuetify` 패키지를 빌드합니다.
+  ```bash
+  pnpm --filter @dsds/vue-vuetify build
+  ```
+
+#### 3. Storybook 관련 스크립트
+
+- **`storybook:tokens`**: `@dsds/tokens` 패키지의 Storybook을 포트 6005에서 실행합니다.
+  ```bash
+  BROWSER=none STORYBOOK_BASE_URL= pnpm --filter @dsds/tokens storybook -p 6005
+  ```
+- **`storybook:radix-ui`**: `@dsds/react-radix-ui` 패키지의 Storybook을 포트 6006에서 실행합니다.
+  ```bash
+  BROWSER=none STORYBOOK_BASE_URL= pnpm --filter @dsds/react-radix-ui storybook dev -p 6006
+  ```
+- **`storybook:vuetify`**: `@dsds/vue-vuetify` 패키지의 Storybook을 포트 6007에서 실행합니다.
+  ```bash
+  BROWSER=none STORYBOOK_BASE_URL= pnpm --filter @dsds/vue-vuetify storybook -p 6007
+  ```
+
+#### 4. 애플리케이션 실행 및 테스트 관련 스크립트
+
+- **`start:portal-app`**: `@dsds/portal-app` 패키지를 시작합니다.
+  ```bash
+  pnpm --filter @dsds/portal-app start
+  ```
+- **`test-vuetify`**: `@dsds/vue-vuetify-storybook` 패키지의 테스트를 실행합니다.
+  ```bash
+  pnpm --filter @dsds/vue-vuetify-storybook test
+  ```
+- **`playwright-init`**: `@dsds/vue-vuetify-storybook` 패키지에 대해 Playwright를 초기화합니다.
+  ```bash
+  pnpm --filter @dsds/vue-vuetify-storybook playwright-init
+  ```
+
+#### 5. 배포 및 편의성 스크립트
+
+- **`deploy-all`**: 모든 `@dsds/*` 패키지를 배포합니다.
+  ```bash
+  pnpm --filter @dsds/* run deploy
+  ```
+- **`portal-app`**, **`radix-ui`**, **`vuetify`**: 각각 `@dsds/portal-app`, `@dsds/react-radix-ui`, `@dsds/vuetify` 패키지에 대한 `pnpm` 필터를 실행합니다.
+  ```bash
+  pnpm --filter @dsds/portal-app
+  pnpm --filter @dsds/react-radix-ui
+  pnpm --filter @dsds/vuetify
+  ```
+
+이러한 스크립트들은 개발, 빌드, 테스트, 배포 등 다양한 작업을 효율적으로 수행할 수 있도록 도와줍니다.

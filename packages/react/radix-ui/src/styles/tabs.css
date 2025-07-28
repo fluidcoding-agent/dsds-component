@@ -1,0 +1,125 @@
+@import "./button.css";
+
+@theme inline {
+  --color-tab-under: var(--color-border-border-2-outer);
+  --color-tab-under-hover: var(--colors-neutral-neutral-09);
+  --color-tab-under-active: var(--color-bg-on-shape-brand);
+  --color-tab-text: var(--color-text-text-neutral-3rd);
+  --color-tab-text-hover: var(--color-text-text-neutral-2nd);
+  --color-tab-text-active: var(--color-text-brand);
+  --color-tab-border-active: var(--color-border-border-focused-activated-hover);
+}
+
+@utility border-tab-focus {
+  & > div.label {
+    box-shadow: inset 0 0 0 1px var(--color-border-border-focused-activated-hover);
+  }
+}
+
+@utility tab-underline {
+  button[role="tab"] {
+    @apply text-tab-text focus-visible:text-tab-text-hover;
+    @apply data-[state=active]:text-tab-text-active data-[state=active]:[&>u]:bg-tab-under-active;
+    @apply focus-visible:[&>.label]:outline-ring focus-visible:[&>u]:text-tab-text-hover;
+
+    /* Hover only non-active tabs */
+    &:not([data-state="active"]):hover {
+      @apply text-tab-text-hover;
+
+      & > u {
+        @apply bg-tab-under-hover hover:not-[:focus-visible]:[&>u]:bg-tab-under-hover;
+      }
+    }
+
+    & > .label {
+      @apply pb-[10px];
+    }
+
+    & > .line {
+      @apply bg-tab-under absolute bottom-[1px] h-[3px] w-full;
+    }
+  }
+}
+
+@utility tab-underline-medium {
+  button[role="tab"] {
+    @apply pr-2 last:pr-0 [&>u]:w-[calc(100%-8px)] last:[&>u]:w-full;
+  }
+}
+
+@utility tab-underline-small {
+  button[role="tab"] {
+    @apply pr-[6px] last:pr-0 [&>u]:w-[calc(100%-6px)] last:[&>u]:w-full;
+  }
+}
+
+@utility tab-button {
+  button[role="tab"] {
+    @apply text-button-2nd-text bg-white;
+    @apply data-[state=active]:bg-button-2nd-bg-selected data-[state=active]:text-button-2nd-text-selected;
+    @apply border-button-2nd-border border-1 border-r-0;
+
+    &:first-child {
+      @apply rounded-l-xs;
+    }
+
+    &:last-child {
+      @apply rounded-r-xs border-r-1;
+    }
+
+    &:hover {
+      @apply border-button-2nd-border-hover;
+    }
+
+    /* 마우스 Hover 상태에서 그 다음(오른쪽) 위치의 Button 의 왼쪽 Border를 강조 */
+    &:hover + button {
+      @apply border-l-button-2nd-border-hover;
+    }
+
+    &:focus-visible {
+      @apply outline-ring border-button-2nd-border-hover border-1;
+      position: relative;
+      z-index: 1;
+    }
+
+    &:focus-visible + button {
+      @apply border-l-transparent;
+    }
+  }
+}
+
+@utility tab-button-medium {
+  button[role="tab"] {
+    @apply py-[1px] pr-[8px] pl-[7px];
+
+    &:first-child {
+      @apply pr-[8px];
+    }
+
+    &:last-child {
+      @apply pr-[7px];
+    }
+
+    &:focus-visible {
+      padding-right: 7px;
+    }
+  }
+}
+
+@utility tab-button-small {
+  button[role="tab"] {
+    @apply py-[0px] pr-[6px] pl-[5px];
+
+    &:first-child {
+      @apply pr-[6px];
+    }
+
+    &:last-child {
+      @apply pr-[5px];
+    }
+
+    &:focus-visible {
+      padding-right: 5px;
+    }
+  }
+}

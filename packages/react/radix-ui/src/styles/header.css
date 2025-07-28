@@ -1,0 +1,40 @@
+@import "./variables";
+
+:root {
+  --color-header-bg: var(--colors-neutral-neutral-04);
+  --color-header-text: var(--colors-neutral-neutral-16);
+  --color-header-button: var(--color-button-ghost-text);
+  --color-header-searchbox-bg: var(--color-bg-on-ghost-box-ghost-box-default);
+  --color-header-searchbox-border: var(--color-text-box-border-default);
+  --color-header-searchbox-hover-border: var(--color-text-box-border-hover);
+  --color-header-searchbox-focus-border: var(--color-text-box-border-focus);
+}
+
+.header-theme-dark {
+  --color-header-bg: var(--colors-neutral-neutral-16);
+  --color-header-text: var(--color-text-on-button-on-brand);
+  --color-header-button: var(--color-text-on-button-on-brand);
+  --color-header-searchbox-bg: var(--color-bg-on-ghost-box-ghost-box-on-colorbg);
+  --color-header-searchbox-border: transparent;
+  --color-header-searchbox-hover-border: var(--colors-neutral-neutral-15);
+  --color-header-searchbox-focus-border: var(--color-text-box-border-focus);
+}
+
+@theme inline {
+  --color-header-bg: var(--color-header-bg);
+  --color-header-text: var(--color-header-text);
+  --color-header-button: var(--color-header-button);
+  --color-header-searchbox-bg: var(--color-header-searchbox-bg);
+}
+
+@utility border-header-searchbox-default {
+  .box-wrapper {
+    box-shadow: inset 0 0 0 1px var(--color-header-searchbox-border);
+    &:focus-within {
+      box-shadow: inset 0 0 0 1px var(--color-header-searchbox-focus-border);
+    }
+    &:hover:not(:focus-within) {
+      box-shadow: inset 0 0 0 1px var(--color-header-searchbox-hover-border);
+    }
+  }
+}

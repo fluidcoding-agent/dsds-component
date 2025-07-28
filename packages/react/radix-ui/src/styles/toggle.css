@@ -1,0 +1,73 @@
+@import "./variables/global.css";
+
+@theme inline {
+  --color-toggle-bg: var(--colors-neutral-neutral-04);
+  --color-toggle-border: var(--colors-neutral-neutral-09);
+  --color-toggle-bg-disabled: var(--colors-neutral-neutral-04);
+  --color-toggle-disabled: var(--colors-neutral-neutral-08);
+  --color-toggle-border-hover: var(--colors-neutral-neutral-11);
+  --color-toggle-thumb-bg: var(--colors-neutral-neutral-13);
+  --color-toggle-thumb-bg-check: var(--colors-neutral-neutral-01);
+  --color-toggle-thumb-stroke: var(--color-border-border-focused-activated-hover);
+  --color-toggle-thumb-stroke-disabled: #d2d7dd;
+  --color-toggle-bg-check: var(--color-bg-on-shape-brand);
+  --color-toggle-bg-check-disable: var(--colors-neutral-neutral-08);
+  --color-toggle-bg-check-hover: var(--colors-wafer-blue-wafer-blue-09);
+}
+
+@utility toggle-unchecked {
+  @apply bg-toggle-bg border-toggle-uncheck hover:border-toggle-uncheck-hover focus:border-toggle-uncheck-hover;
+
+  &:disabled {
+    @apply bg-toggle-bg-disabled border-toggle-disabled;
+  }
+}
+
+@utility toggle-checked {
+  @apply bg-toggle-bg-check hover:bg-toggle-bg-check-hover shadow-toggle-check focus:bg-toggle-bg-check-hover;
+
+  &:disabled {
+    @apply bg-toggle-bg-check-disable hover:not-[:disabled]:bg-toggle-bg-check-hover shadow-toggle-disabled;
+  }
+}
+
+@utility toggle-thumb-checked {
+  @apply bg-toggle-thumb-bg-check;
+
+  &:not([data-disabled]) {
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.04);
+  }
+
+  &[data-disabled] {
+    @apply [&>.icon>svg]:stroke-toggle-thumb-stroke-disabled;
+    box-shadow: 1px 0px 1px 0px rgba(0, 0, 0, 0.08);
+  }
+}
+
+@utility toggle-thumb-unchecked {
+  @apply [&>.icon]:hidden;
+
+  &[data-disabled] {
+    @apply bg-toggle-disabled;
+  }
+}
+
+@utility border-toggle-uncheck {
+  box-shadow: inset 0 0 0 1px var(--color-toggle-border);
+}
+
+@utility border-toggle-uncheck-hover {
+  box-shadow: inset 0 0 0 1px var(--color-toggle-border-hover);
+}
+
+@utility border-toggle-disabled {
+  box-shadow: inset 0 0 0 1px var(--color-toggle-disabled);
+}
+
+@utility shadow-toggle-check {
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.08) inset;
+}
+
+@utility shadow-toggle-disabled {
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.08) inset;
+}

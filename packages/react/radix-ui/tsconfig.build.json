@@ -1,0 +1,7 @@
+/*
+ * Library 빌드를 위한 설정
+ */
+{
+  "extends": "./tsconfig.node.json",
+  "exclude": ["node_modules", "tests", "dist", "src/stories", "docs/**/vue", "src/**/_shadcn"]
+}

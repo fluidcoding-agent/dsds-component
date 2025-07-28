@@ -1,0 +1,84 @@
+.markdown {
+
+  h1,
+  h2,
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+
+.markdownCompact {
+  font-size: 0.9rem;
+
+  ol {
+    list-style: decimal !important;
+    padding-left: 1.1rem;
+  }
+
+  ul {
+    list-style: disc;
+    padding-left: 1.3rem;
+  }
+
+  ul>li>ul {
+    list-style: square;
+  }
+
+  hr {
+    display: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+    margin-bottom: 5px;
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+
+  h2 {
+    font-size: 0.95rem;
+  }
+
+  h3 {
+    font-size: 0.9rem;
+  }
+}
+
+.markdownComponent {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: initial;
+    margin-bottom: initial;
+    font-size: initial;
+  }
+}
+
+.markdownDraft {
+  hr:first-child {
+    display: none;
+  }
+
+  h2:nth-child(2) {
+    display: none;
+  }
+
+  h1:nth-child(3) {
+    margin-top: 0px;
+  }
+}

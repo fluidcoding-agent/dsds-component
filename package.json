@@ -1,0 +1,48 @@
+{
+  "name": "dsds",
+  "version": "0.1.0",
+  "description": "DS Design System Monorepo",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev:portal-app": "pnpm --filter @dsds/portal-app dev",
+    "dev:mcp-server": "pnpm --filter @dsds/mcp-server dev",
+    "watch:radix-ui": "pnpm --filter @dsds/react-radix-ui build -w",
+    "build": "pnpm --filter @dsds/* build",
+    "deploy-all": "pnpm install && pnpm build && pnpm --filter @dsds/* run deploy:storybook && pnpm --filter @dsds/portal-app run pm2:restart",
+    "build:storybooks": "pnpm --filter @dsds/* run build:storybook",
+    "build:themes": "node ./scripts/build_themes.js",
+    "build:fonts": "pnpm --filter @dsds/fonts run build",
+    "build:radix-ui": "pnpm --filter @dsds/react-radix-ui build",
+    "build:vuetify": "pnpm --filter @dsds/vue-vuetify build",
+    "storybook:tokens": "BROWSER=none STORYBOOK_BASE_URL= pnpm --filter @dsds/tokens storybook",
+    "storybook:tokens-pub": "BROWSER=none STORYBOOK_BASE_URL= pnpm --filter @dsds/tokens storybook-pub",
+    "storybook:radix-ui": "BROWSER=none STORYBOOK_BASE_URL= pnpm --filter @dsds/react-radix-ui storybook",
+    "storybook:vuetify": "BROWSER=none STORYBOOK_BASE_URL= pnpm --filter @dsds/vue-vuetify storybook",
+    "start:portal-app": "pnpm --filter @dsds/portal-app start",
+    "test-vuetify": "pnpm --filter @dsds/vue-vuetify-storybook test",
+    "playwright-init": "pnpm --filter @dsds/vue-vuetify-storybook playwright-init",
+    "portal-app": "pnpm --filter @dsds/portal-app",
+    "radix-ui": "pnpm --filter @dsds/react-radix-ui",
+    "upgrade": "pnpm upgrade --filter @dsds* --latest",
+    "vuetify": "pnpm --filter @dsds/vuetify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad",
+  "devDependencies": {
+    "@tokens-studio/sd-transforms": "^2.0.1",
+    "@types/node": "^24.0.12",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "axios": "^1.10.0",
+    "form-data": "^4.0.3",
+    "selenium-webdriver": "^4.34.0",
+    "style-dictionary": "^5.0.1",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.0"
+  }
+}

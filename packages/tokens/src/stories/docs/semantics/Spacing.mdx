@@ -1,0 +1,38 @@
+import { Meta } from "@storybook/addon-docs/blocks"
+import { getComputedCssVariable } from "@docs/helpers"
+
+<Meta title="Semantics/Spacing (간격)" />
+
+# Semantic / Spacing (간격)
+
+## Density: Compact
+
+export const spacing = [
+    {computed: "p-sm", className: "size-sm"},
+    {computed: "p-md", className: "size-md"},
+    {computed: "p-lg", className: "size-lg"},
+    {computed: "p-xl", className: "size-xl", comment: "TBD"},
+    {computed: "p-2xl", className: "size-2xl", comment: "TBD"},
+    {computed: "p-3xl", className: "size-3xl", comment: "TBD"},
+]
+
+<div className="sb-unstyled flex flex-col gap-xl">
+    {spacing.map(({ computed, className, comment }) => {
+        return (
+            <div className="gap-lg flex items-center">
+                <div className={`${className} bg-brand`} />
+                <div className="flex flex-col">
+                    <div class="flex flex-col">
+                        <p className="font-mono font-bold text-body">{computed} {comment && <span className="opacity-dim-1">({comment})</span>}</p>
+                        <p className="typo-caption-mono opacity-dim-1">{getComputedCssVariable("padding", computed)}</p>
+                    </div>
+                </div>
+            </div>
+        )
+    })}
+</div>
+
+
+## Density: Cozy (TBD)
+
+TBD

@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@import "@dsds/react-radix-ui/styles.css";
+
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-heading) var(--font-sans);
+  --font-mono: var(--font-mono) --color-mp-header: var(--color-foreground);
+}

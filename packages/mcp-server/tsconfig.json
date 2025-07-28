@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json", // 1. 루트의 기본 설정 상속
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+  },
+  "include": ["src", "e2e"],
+  "references": [
+    { "path": "./tsconfig.node.json"},
+    { "path": "../react/radix-ui" }
+  ]
+}

@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "SamsungOneKoreanNoF";
+  src: url("./fonts/SamsungOneKoreanNoF-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SamsungOneKoreanNoF";
+  src: url("./fonts/SamsungOneKoreanNoF-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Samsung Sharp Sans";
+  font-weight: 700;
+  src: url("./fonts/SamsungSharpSans-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "D2Coding";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/D2Coding.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "D2Coding";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/D2CodingBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./fonts/Inter-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url("./fonts/PretendardGOVVariable.woff2") format("woff2-variations");
+}
+
+:root {
+  --font-sans: "SamsungOneKoreanNoF", system-ui, sans-serif;
+  --font-heading: "Samsung Sharp Sans", "SamsungOneKoreanNoF", system-ui, sans-serif;
+  --font-mono: D2Coding, Consolas, "Courier New", ui-monospace, monospace;
+}

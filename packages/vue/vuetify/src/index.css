@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@import "./styles/variables";
+
+@import "./styles/vbtn.css";
+@import "./styles/vselect.css";
+
+@theme inline {
+  /* Vuetify-specific overrides if needed */
+}

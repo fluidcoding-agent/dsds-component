@@ -1,0 +1,18 @@
+packages:
+  - packages/*
+  - packages/icons/*
+  - packages/vue/*
+  - packages/react/*
+  - apps/*
+
+ignoredBuiltDependencies:
+  - "@bundled-es-modules/glob"
+  - "@parcel/watcher"
+  - "@tailwindcss/oxide"
+  - esbuild
+  - sharp
+  - style-dictionary
+  - unrs-resolver
+
+shamefullyHoist: true
+strictPeerDependencies: false

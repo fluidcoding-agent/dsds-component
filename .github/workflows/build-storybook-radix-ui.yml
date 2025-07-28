@@ -1,0 +1,87 @@
+name: Build and Publish Storybook / react-radix-ui
+
+on:
+  push:
+    paths:
+      ["docs/*/**.mdx", "docs/helpers/*", "packages/react/radix-ui/src/**", "packages/react/radix-ui/.storybook/**"]
+    branches: ["main", dev]
+  pull_request:
+    paths:
+      ["docs/*/**.mdx", "docs/helpers/*", "packages/react/radix-ui/src/**", "packages/react/radix-ui/.storybook/**"]
+    branches: ["dev"]
+    types:
+      - closed
+
+jobs:
+  build-publish:
+    name: Build and Publish WebSite
+    runs-on: [self-hosted]
+    environment: Build
+    permissions:
+      contents: read # actions/checkout이 저장소 코드를 읽기 위해 필요
+      pull-requests: write # PR에 댓글을 작성하기 위해 필요
+    if: |
+      github.event_name == 'push' ||
+      (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
+    steps:
+      # step 0. 체크아웃
+      - uses: actions/checkout@v4
+      # step 1. 종속성 모듈 설치
+      - name: Build monorepo dependencies
+        working-directory: ./
+        run: |
+          pnpm install --no-frozen-lockfile
+          pnpm build:fonts
+      - name: Build Storybook for dev
+        if: github.ref_name == 'dev'
+        working-directory: ./packages/react/radix-ui
+        run: |
+          sed -i 's/DSDS/DSDS \/ DEV/g' .storybook/theme.ts
+          cp ../../../assets/images/dsds-logo-dev.png ./public/images/dsds-logo.png
+          cp ../../../assets/favicon-dev.ico ./public/favicon.ico
+          export STORYBOOK_BASE_URL=https://dsds.mwebdev.samsungds.net/storybooks-dev/react-radix-ui/
+          export BUILD_TYPE="개발"
+          pnpm build:storybook
+          mkdir -p /appdata/mwebdev/shared/www/storybooks-dev/react-radix-ui
+          rm -rf /appdata/mwebdev/shared/www/storybooks-dev/react-radix-ui/*
+          cp -rf storybook-static/* /appdata/mwebdev/shared/www/storybooks-dev/react-radix-ui/
+          echo "[$BUILD_TYPE 스토리북]($STORYBOOK_BASE_URL)이 빌드되었습니다." >> comment.md
+          echo "STORYBOOK_BASE_URL=$STORYBOOK_BASE_URL" >> $GITHUB_ENV
+          echo "BUILD_TYPE=$BUILD_TYPE" >> $GITHUB_ENV
+      - name: Build Storybook for main
+        if: github.ref_name == 'main'
+        working-directory: ./packages/react/radix-ui
+        run: |
+          export STORYBOOK_BASE_URL=https://dsds.mwebdev.samsungds.net/storybooks/react-radix-ui/
+          export BUILD_TYPE="운영"
+          pnpm build:storybook
+          mkdir -p /appdata/mwebdev/shared/www/storybooks/react-radix-ui
+          rm -rf /appdata/mwebdev/shared/www/storybooks/react-radix-ui/*
+          cp -rf storybook-static/* /appdata/mwebdev/shared/www/storybooks/react-radix-ui/
+          echo "[$BUILD_TYPE 스토리북]($STORYBOOK_BASE_URL)이 빌드되었습니다." >> comment.md
+          echo "STORYBOOK_BASE_URL=$STORYBOOK_BASE_URL" >> $GITHUB_ENV
+          echo "BUILD_TYPE=$BUILD_TYPE" >> $GITHUB_ENV
+      # step 3. 커밋 메시지 저장
+      - name: Save Commit Message
+        working-directory: ./packages/react/radix-ui
+        run: |
+          echo "COMMIT_MESSAGE<<EOF" >> $GITHUB_ENV
+          echo "${{ github.event.head_commit.message }}" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+      # step 4. mattermost 메시지 전송
+      - name: Send notification
+        run: |
+          export MATTERMOST_URL="${{ vars.MATTERMOST_URL }}"
+          export MATTERMOST_CHANNEL_ID="${{ vars.MATTERMOST_CHANNEL_ID }}"
+          export MATTERMOST_ACCESS_TOKEN="${{ secrets.MATTERMOST_ACCESS_TOKEN }}"
+          export DISCORD_WEBHOOK_URL="${{ secrets.DISCORD_WEBHOOK_URL}}"
+
+          NOTI_TARGET="${{ vars.NOTI_TARGET }}"
+          QUERY_STRING=$(echo "$COMMIT_MESSAGE" | grep -oP '\?path=[^\s]+' || true)
+          STORYBOOK_URL=$STORYBOOK_BASE_URL
+          if [ -n "$QUERY_STRING" ]; then
+            STORYBOOK_URL+=$QUERY_STRING
+          fi
+          ESCAPED_COMMIT_MESSAGE=$(echo "$COMMIT_MESSAGE" | sed 's/`/\\`/g')
+          MESSAGE=$(echo -e "$BUILD_TYPE 컴포넌트 변경이 빌드되어 [Storybook]($STORYBOOK_URL) 에 반영되었습니다.\n\n- **커밋 메세지**:\n\`\`\`\n$ESCAPED_COMMIT_MESSAGE\n\`\`\`")
+          pnpm node ./scripts/noti_message.js -t $NOTI_TARGET -m "$MESSAGE" -u "$STORYBOOK_URL"
