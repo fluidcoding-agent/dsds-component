@@ -1,0 +1,49 @@
+name: Publish dsds CLI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'packages/react/radix-ui/src/components/ui/**'
+      - 'packages/dsds-cli/**'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org'
+      
+      - name: Install dependencies
+        run: |
+          cd packages/dsds-cli
+          npm install
+      
+      - name: Sync components
+        run: |
+          cd packages/dsds-cli
+          npm run sync
+      
+      - name: Build
+        run: |
+          cd packages/dsds-cli
+          npm run build
+      
+      - name: Bump version
+        run: |
+          cd packages/dsds-cli
+          npm version patch --no-git-tag-version
+      
+      - name: Publish to npm
+        run: |
+          cd packages/dsds-cli
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
