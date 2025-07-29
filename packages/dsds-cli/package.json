@@ -1,0 +1,37 @@
+{
+  "name": "dsds",
+  "version": "1.0.0",
+  "description": "A CLI tool for adding UI components to your project",
+  "main": "dist/index.js",
+  "bin": {
+    "dsds": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "sync": "node scripts/sync-components.js",
+    "prebuild": "npm run sync",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["ui", "components", "cli", "react", "tailwind"],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.0.0",
+    "chalk": "^4.1.2",
+    "ora": "^5.4.1",
+    "prompts": "^2.4.2",
+    "fs-extra": "^11.1.1",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/fs-extra": "^11.0.1",
+    "@types/prompts": "^2.4.4",
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "dist",
+    "components"
+  ]
+}
