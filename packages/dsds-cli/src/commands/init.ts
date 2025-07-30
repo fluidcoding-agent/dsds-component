@@ -2,108 +2,179 @@ import fs from 'fs-extra';
 import path from 'path';
 import chalk from 'chalk';
 import prompts from 'prompts';
+import ora from 'ora';
+import { execSync } from 'child_process';
+import { DEFAULT_CONFIG, writeConfig, type Config } from '../utils/config';
+import { getPackageManager, getPackageManagerCommand } from '../utils/get-package-manager';
 
-export async function initCommand() {
-  console.log(chalk.blue('🚀 Initializing dsds in your project...'));
+interface InitOptions {
+  yes?: boolean;
+  defaults?: boolean;
+  cwd?: string;
+}
 
-  const cwd = process.cwd();
-  const configPath = path.join(cwd, 'components.json');
-
+export async function initCommand(options: InitOptions = {}) {
+  const cwd = options.cwd || process.cwd();
+  
+  console.log(chalk.blue('Welcome to dsds/ui!'));
+  console.log('');
+  
   // Check if components.json already exists
+  const configPath = path.join(cwd, 'components.json');
   if (await fs.pathExists(configPath)) {
     const { overwrite } = await prompts({
       type: 'confirm',
       name: 'overwrite',
-      message: 'components.json already exists. Overwrite?',
+      message: 'components.json already exists. Would you like to overwrite it?',
       initial: false,
     });
-
+    
     if (!overwrite) {
-      console.log(chalk.yellow('Initialization cancelled.'));
+      console.log(chalk.yellow('Cancelled.'));
       return;
     }
   }
 
-  // Get project configuration
-  const config = await prompts([
-    {
-      type: 'select',
-      name: 'style',
-      message: 'Which style would you like to use?',
-      choices: [
-        { title: 'New York', value: 'new-york' },
-        { title: 'Default', value: 'default' },
-      ],
-      initial: 0,
-    },
-    {
-      type: 'select',
-      name: 'baseColor',
-      message: 'Which color would you like to use as base color?',
-      choices: [
-        { title: 'Neutral', value: 'neutral' },
-        { title: 'Gray', value: 'gray' },
-        { title: 'Zinc', value: 'zinc' },
-        { title: 'Stone', value: 'stone' },
-        { title: 'Slate', value: 'slate' },
-      ],
-      initial: 0,
-    },
-    {
-      type: 'text',
-      name: 'componentsPath',
-      message: 'Where would you like to add your components?',
-      initial: './components',
-    },
-    {
-      type: 'text',
-      name: 'utilsPath',
-      message: 'Where would you like to add your utils?',
-      initial: './lib/utils',
-    },
-  ]);
+  let config = { ...DEFAULT_CONFIG };
 
-  const componentConfig = {
-    $schema: 'https://ui.shadcn.com/schema.json',
-    style: config.style,
-    rsc: false,
-    tsx: true,
-    tailwind: {
-      config: 'tailwind.config.js',
-      css: 'app/globals.css',
-      baseColor: config.baseColor,
-      cssVariables: true,
-      prefix: '',
-    },
-    aliases: {
-      components: '@/components',
-      utils: '@/lib/utils',
-      ui: `@/${config.componentsPath.replace('./', '')}/ui`,
-      lib: '@/lib',
-      hooks: '@/hooks',
-    },
-    iconLibrary: 'lucide',
-  };
+  if (!options.defaults && !options.yes) {
+    const responses = await prompts([
+      {
+        type: 'select',
+        name: 'style',
+        message: 'Which style would you like to use?',
+        choices: [
+          { title: 'Default', value: 'default' },
+          { title: 'New York', value: 'new-york' },
+        ],
+        initial: 0,
+      },
+      {
+        type: 'select',
+        name: 'baseColor',
+        message: 'Which color would you like to use as base color?',
+        choices: [
+          { title: 'Slate', value: 'slate' },
+          { title: 'Gray', value: 'gray' },
+          { title: 'Zinc', value: 'zinc' },
+          { title: 'Neutral', value: 'neutral' },
+          { title: 'Stone', value: 'stone' },
+        ],
+        initial: 0,
+      },
+      {
+        type: 'confirm',
+        name: 'cssVariables',
+        message: 'Would you like to use CSS variables for colors?',
+        initial: true,
+      },
+      {
+        type: 'text',
+        name: 'tailwindConfig',
+        message: 'Where is your tailwind.config.js located?',
+        initial: 'tailwind.config.js',
+      },
+      {
+        type: 'text',
+        name: 'tailwindCss',
+        message: 'Where is your global CSS file?',
+        initial: 'app/globals.css',
+      },
+      {
+        type: 'confirm',
+        name: 'rsc',
+        message: 'Would you like to use React Server Components?',
+        initial: true,
+      },
+      {
+        type: 'text',
+        name: 'componentsPath',
+        message: 'Configure the import alias for components?',
+        initial: '@/components',
+      },
+      {
+        type: 'text',
+        name: 'utilsPath',
+        message: 'Configure the import alias for utils?',
+        initial: '@/lib/utils',
+      },
+    ]);
 
-  await fs.writeJson(configPath, componentConfig, { spaces: 2 });
+    config = {
+      ...config,
+      style: responses.style,
+      rsc: responses.rsc,
+      tailwind: {
+        ...config.tailwind,
+        config: responses.tailwindConfig,
+        css: responses.tailwindCss,
+        baseColor: responses.baseColor,
+        cssVariables: responses.cssVariables,
+      },
+      aliases: {
+        ...config.aliases,
+        components: responses.componentsPath,
+        utils: responses.utilsPath,
+      },
+    };
+  }
 
-  // Create components directory
-  const componentsDir = path.join(cwd, config.componentsPath, 'ui');
-  await fs.ensureDir(componentsDir);
-
-  // Create utils directory and file
-  const utilsDir = path.dirname(path.join(cwd, config.utilsPath));
-  await fs.ensureDir(utilsDir);
+  const spinner = ora('Creating components.json...').start();
   
-  const utilsContent = `import { type ClassValue, clsx } from "clsx"
+  try {
+    await writeConfig(cwd, config);
+    spinner.succeed('Created components.json');
+  } catch (error) {
+    spinner.fail('Failed to create components.json');
+    console.error(error);
+    return;
+  }
+
+  // Create utils file if it doesn't exist
+  const utilsPath = config.aliases.utils.replace('@/', '');
+  const utilsFilePath = path.join(cwd, utilsPath + '.ts');
+  
+  if (!(await fs.pathExists(utilsFilePath))) {
+    const utilsSpinner = ora('Creating utils file...').start();
+    
+    try {
+      await fs.ensureDir(path.dirname(utilsFilePath));
+      await fs.writeFile(utilsFilePath, `import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
-}`;
+}
+`);
+      utilsSpinner.succeed('Created utils file');
+    } catch (error) {
+      utilsSpinner.fail('Failed to create utils file');
+      console.error(error);
+    }
+  }
 
-  await fs.writeFile(path.join(cwd, config.utilsPath + '.ts'), utilsContent);
+  // Install dependencies
+  const packageManager = getPackageManager(cwd);
+  const commands = getPackageManagerCommand(packageManager);
+  
+  const depsSpinner = ora('Installing dependencies...').start();
+  
+  try {
+    execSync(`${commands.addDev} clsx tailwind-merge class-variance-authority`, {
+      cwd,
+      stdio: 'pipe',
+    });
+    depsSpinner.succeed('Installed dependencies');
+  } catch (error) {
+    depsSpinner.fail('Failed to install dependencies');
+    console.log(chalk.yellow('Please install the following dependencies manually:'));
+    console.log(chalk.gray('clsx tailwind-merge class-variance-authority'));
+  }
 
-  console.log(chalk.green('✅ dsds initialized successfully!'));
-  console.log(chalk.blue('You can now add components with: dsds add button'));
+  console.log('');
+  console.log(chalk.green('Success! Your project has been configured.'));
+  console.log('');
+  console.log('You can now start adding components:');
+  console.log(chalk.gray('  npx dsds add button'));
+  console.log('');
 }

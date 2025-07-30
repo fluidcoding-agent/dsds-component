@@ -1,33 +1,35 @@
 import chalk from 'chalk';
-import { getComponentRegistry } from '../utils/registry';
+import { getRegistry } from '../utils/registry';
 
 export async function listCommand() {
-  console.log(chalk.blue('📦 Available dsds components:'));
-  console.log();
-
-  try {
-    const registry = await getComponentRegistry();
-    const components = Object.keys(registry);
-
-    if (components.length === 0) {
-      console.log(chalk.yellow('No components found.'));
-      return;
-    }
-
-    components.sort().forEach(component => {
-      const info = registry[component];
-      console.log(chalk.green(`  ${component}`));
-      if (info.dependencies && info.dependencies.length > 0) {
-        console.log(chalk.gray(`    Dependencies: ${info.dependencies.join(', ')}`));
-      }
-    });
-
-    console.log();
-    console.log(chalk.blue(`Total: ${components.length} components`));
-    console.log();
-    console.log(chalk.gray('Usage: dsds add <component-name>'));
-    console.log(chalk.gray('Example: dsds add button card'));
-  } catch (error) {
-    console.error(chalk.red('Failed to fetch component list:'), error);
+  console.log(chalk.blue('Available components:'));
+  console.log('');
+  
+  const registry = await getRegistry();
+  const components = Object.keys(registry).sort();
+  
+  if (components.length === 0) {
+    console.log(chalk.gray('No components available.'));
+    return;
   }
+  
+  for (const component of components) {
+    const item = registry[component];
+    console.log(`${chalk.green('●')} ${chalk.bold(component)}`);
+    
+    if (item.dependencies && item.dependencies.length > 0) {
+      console.log(`  ${chalk.gray('Dependencies:')} ${item.dependencies.join(', ')}`);
+    }
+    
+    console.log('');
+  }
+  
+  console.log(chalk.gray(`Total: ${components.length} component${components.length > 1 ? 's' : ''}`));
+  console.log('');
+  console.log('Usage:');
+  console.log('  npx dsds add [component]');
+  console.log('');
+  console.log('Example:');
+  console.log('  npx dsds add button');
+  console.log('  npx dsds add button card');
 }
